@@ -17,16 +17,16 @@ class Furniture {
     this.if_hover = (mouseX >= this.x && mouseX <= (this.x + this.image.width) && mouseY >= this.y && mouseY <= (this.y + this.image.height))
 
     image(this.image, this.x, this.y);
-
-    this.hover();
   }
 
   // overall function - loop through all objects
   hover() {
     if (this.if_hover) {
-      cursor(HAND);
+      // cursor(HAND);
+      return true;
     } else {
-      cursor(ARROW);
+      // cursor(ARROW);
+      return false;
     }
   }
 

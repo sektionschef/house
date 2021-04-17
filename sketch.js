@@ -1,16 +1,17 @@
 
-let canvasWidth = 1000;
-let canvasHeight = 800;
+let canvasWidth = 1400;
+let canvasHeight = 900;
 
 let house;
 let telephone;
 let whiteboard;
 let telephone_image;
 let whiteboard_image;
+let furnitures;
 
 function preload() {
   // soundtrack = loadSound('Sunny Day-SoundBible.com-2064222612.mp3');
-  house = loadImage('images/house_dummy.jpg');
+  house = loadImage('images/house_dummy_03.png');
   telephone_image = loadImage('images/telephone.png');
   whiteboard_image = loadImage('images/whiteboard.png');
 }
@@ -18,17 +19,25 @@ function preload() {
 function setup() {
   createCanvas(canvasWidth, canvasHeight);
 
-  telephone = new Furniture(50, 50, telephone_image, 30, 'https://teams.microsoft.com/l/meetup-join/19%3ameeting_YzA4YzdhMDAtMWUwYi00MmExLWEzZWMtMzU4Mjk5ODQ3YTJj%40thread.v2/0?context=%7b%22Tid%22%3a%22452b551c-4057-4e63-a6fe-63641fc132f9%22%2c%22Oid%22%3a%22e79d3def-9ee9-413a-b242-93cfd991115d%22%7d');
-  whiteboard = new Furniture(250, 250, whiteboard_image, 4, "https://orf.at");
+  telephone = new Furniture(600, 650, telephone_image, 50, 'https://teams.microsoft.com/l/meetup-join/19%3ameeting_YzA4YzdhMDAtMWUwYi00MmExLWEzZWMtMzU4Mjk5ODQ3YTJj%40thread.v2/0?context=%7b%22Tid%22%3a%22452b551c-4057-4e63-a6fe-63641fc132f9%22%2c%22Oid%22%3a%22e79d3def-9ee9-413a-b242-93cfd991115d%22%7d');
+  whiteboard = new Furniture(550, 350, whiteboard_image, 4, "https://miro.com/app/board/o9J_ktEzqBk=/");
+
+  furnitures = [telephone, whiteboard]
 }
 
 function draw() {
 
-  background("red");
+  background("#ffd223");
   image(house, (width/2 - house.width/2), (height - house.height));
 
-  telephone.draw();
-  whiteboard.draw();
+  cursor(ARROW);
+
+  for (furniture of furnitures) {
+    furniture.draw();
+    if (furniture.hover()) {
+      cursor(HAND);
+    }
+  }
 
 
   // text
