@@ -8,6 +8,7 @@ let whiteboard;
 let telephone_image;
 let whiteboard_image;
 let furnitures;
+let room;
 
 function preload() {
   // soundtrack = loadSound('Sunny Day-SoundBible.com-2064222612.mp3');
@@ -23,6 +24,8 @@ function setup() {
   whiteboard = new Furniture(550, 350, whiteboard_image, 4, "https://miro.com/app/board/o9J_ktEzqBk=/");
 
   furnitures = [telephone, whiteboard]
+
+  room = new Room(20, 20);
 }
 
 function draw() {
@@ -38,6 +41,8 @@ function draw() {
       cursor(HAND);
     }
   }
+
+  room.draw()
 
 
   // text
