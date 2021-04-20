@@ -48,7 +48,7 @@ function draw() {
   // parallax middle line
   let parallax_middle = room_review.get_parallax_middle();
   telephone.draw(parallax_middle.x, parallax_middle.y);
-  whiteboard.draw(400, 400);
+  whiteboard.draw(parallax_middle.x, parallax_middle.y);
 
   for (furniture of furnitures) {
     // furniture.draw(400, 400);

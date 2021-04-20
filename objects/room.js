@@ -17,7 +17,7 @@ class Room {
 
     // start for item
     this.middle_x = x;
-    this.middle_y = y + this.small_wall.height/2;
+    this.middle_y = y + this.small_wall.height/2 + (this.big_wall.height - this.small_wall.height)/2;
 
     this.small_wall.x = this.x - this.small_wall.width/2
     this.small_wall.y = this.y - this.small_wall.height/2
@@ -68,7 +68,7 @@ class Room {
 
     this.update_parallax();
 
-    fill(143, 199, 227);
+    fill("#cfcdcf");
     this.drawWall(this.big_wall.coordinates);
     fill(242);
     this.drawWall(this.small_wall.coordinates);
@@ -79,7 +79,7 @@ class Room {
     line(this.big_wall.coordinates.c.x, this.big_wall.coordinates.c.y, this.small_wall.coordinates.c.x, this.small_wall.coordinates.c.y);
     line(this.big_wall.coordinates.d.x, this.big_wall.coordinates.d.y, this.small_wall.coordinates.d.x, this.small_wall.coordinates.d.y);
 
-    // rect
-    circle(this.parallax_middle_x, this.parallax_middle_y, 40);
+    // debug position
+    circle(this.parallax_middle_x, this.parallax_middle_y, 5)
   }
 }
