@@ -12,7 +12,11 @@ class Furniture {
 
   }
 
-  draw() {
+  draw(x, y) {
+
+    // move to cent on the floor
+    this.x = x - this.image.width/2;
+    this.y = y - this.image.height/2;
     // needs to be called in the loop
     this.if_hover = (mouseX >= this.x && mouseX <= (this.x + this.image.width) && mouseY >= this.y && mouseY <= (this.y + this.image.height))
 

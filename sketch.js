@@ -25,8 +25,11 @@ function setup() {
 
   furnitures = [telephone, whiteboard]
 
-  room_review = new Room(600, 400);
-  room_planning = new Room(1000, 400);
+  room_checkin = new Room(600, 300);
+  room_retro = new Room(1000, 300);
+
+  room_review = new Room(600, 550);
+  room_planning = new Room(1000, 550);
 }
 
 function draw() {
@@ -39,12 +42,22 @@ function draw() {
   room_review.draw();
   room_planning.draw();
 
+  room_checkin.draw();
+  room_retro.draw();
+
+  // parallax middle line
+  let parallax_middle = room_review.get_parallax_middle();
+  telephone.draw(parallax_middle.x, parallax_middle.y);
+  whiteboard.draw(400, 400);
+
   for (furniture of furnitures) {
-    furniture.draw();
+    // furniture.draw(400, 400);
     if (furniture.hover()) {
       cursor(HAND);
     }
   }
+
+
 
 
 

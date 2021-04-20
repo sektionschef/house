@@ -15,6 +15,10 @@ class Room {
       "height": 250,
     }
 
+    // start for item
+    this.middle_x = x;
+    this.middle_y = y + this.small_wall.height/2;
+
     this.small_wall.x = this.x - this.small_wall.width/2
     this.small_wall.y = this.y - this.small_wall.height/2
 
@@ -53,6 +57,13 @@ class Room {
     // console.log(this.parallax_x);
   }
 
+  get_parallax_middle() {
+    // middle of the room
+    this.parallax_middle_x = map(mouseX, 0, width, this.middle_x - (this.parallax_shift/2), this.middle_x + (this.parallax_shift/2));
+    this.parallax_middle_y = map(mouseY, 0, height, this.middle_y - (this.parallax_shift/2), this.middle_y + (this.parallax_shift/2));
+    return {"x": this.parallax_middle_x, "y": this.parallax_middle_y}
+  }
+
   draw() {
 
     this.update_parallax();
@@ -67,5 +78,8 @@ class Room {
     line(this.big_wall.coordinates.b.x, this.big_wall.coordinates.b.y, this.small_wall.coordinates.b.x, this.small_wall.coordinates.b.y);
     line(this.big_wall.coordinates.c.x, this.big_wall.coordinates.c.y, this.small_wall.coordinates.c.x, this.small_wall.coordinates.c.y);
     line(this.big_wall.coordinates.d.x, this.big_wall.coordinates.d.y, this.small_wall.coordinates.d.x, this.small_wall.coordinates.d.y);
+
+    // rect
+    circle(this.parallax_middle_x, this.parallax_middle_y, 40);
   }
 }
