@@ -6,20 +6,20 @@ class Room {
     this.parallax_shift = 20;
 
     this.small_wall = {
-      "width": 150,
-      "height": 80,
+      "width": 300,
+      "height": 200,
     }
-
-    this.small_wall.x = width/2 - this.small_wall.width/2
-    this.small_wall.y = height/2 - this.small_wall.height/2
 
     this.big_wall = {
-      "width": 240,
-      "height": 120,
+      "width": 400,
+      "height": 250,
     }
 
-    this.big_wall.x = width/2 - this.big_wall.width/2
-    this.big_wall.y = height/2 - this.big_wall.height/2
+    this.small_wall.x = this.x - this.small_wall.width/2
+    this.small_wall.y = this.y - this.small_wall.height/2
+
+    this.big_wall.x = this.x - this.big_wall.width/2
+    this.big_wall.y = this.y - this.big_wall.height/2
 
     this.small_wall.coordinates = {
       "a": {"x": this.small_wall.x, "y": this.small_wall.y},
@@ -39,8 +39,8 @@ class Room {
   }
 
   update_parallax() {
-    this.parallax_x = map(mouseX, 0, width, (width/2 - this.big_wall.width/2) - this.parallax_shift, (width/2 - this.big_wall.width/2) + this.parallax_shift);
-    this.parallax_y = map(mouseY, 0, height, (height/2 - this.big_wall.height/2) - this.parallax_shift, (height/2 - this.big_wall.height/2) + this.parallax_shift);
+    this.parallax_x = map(mouseX, 0, width, (this.x - this.big_wall.width/2) - this.parallax_shift, (this.x - this.big_wall.width/2) + this.parallax_shift);
+    this.parallax_y = map(mouseY, 0, height, (this.y - this.big_wall.height/2) - this.parallax_shift, (this.y - this.big_wall.height/2) + this.parallax_shift);
 
     this.big_wall.coordinates = {
       "a": {"x": this.parallax_x, "y": this.parallax_y},

@@ -21,11 +21,12 @@ function setup() {
   createCanvas(canvasWidth, canvasHeight);
 
   telephone = new Furniture(600, 650, telephone_image, 50, 'https://teams.microsoft.com/l/meetup-join/19%3ameeting_YzA4YzdhMDAtMWUwYi00MmExLWEzZWMtMzU4Mjk5ODQ3YTJj%40thread.v2/0?context=%7b%22Tid%22%3a%22452b551c-4057-4e63-a6fe-63641fc132f9%22%2c%22Oid%22%3a%22e79d3def-9ee9-413a-b242-93cfd991115d%22%7d');
-  whiteboard = new Furniture(550, 350, whiteboard_image, 4, "https://miro.com/app/board/o9J_ktEzqBk=/");
+  whiteboard = new Furniture(550, 450, whiteboard_image, 4, "https://miro.com/app/board/o9J_ktEzqBk=/");
 
   furnitures = [telephone, whiteboard]
 
-  room = new Room(20, 20);
+  room_review = new Room(600, 400);
+  room_planning = new Room(1000, 400);
 }
 
 function draw() {
@@ -35,6 +36,9 @@ function draw() {
 
   cursor(ARROW);
 
+  room_review.draw();
+  room_planning.draw();
+
   for (furniture of furnitures) {
     furniture.draw();
     if (furniture.hover()) {
@@ -42,7 +46,6 @@ function draw() {
     }
   }
 
-  room.draw()
 
 
   // text
