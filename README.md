@@ -1,6 +1,5 @@
-# bomb it baby
+# Digitale Räume
 
+## Inspiration
 
-parallax: https://editor.p5js.org/slow_izzm/sketches/BJSYWdTOm 
-
-
+- parallax effect: <https://editor.p5js.org/slow_izzm/sketches/BJSYWdTOm>
