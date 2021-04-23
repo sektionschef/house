@@ -1,7 +1,8 @@
 class Room {
-  constructor(x, y) {
+  constructor(x, y, title) {
     this.x = x;
     this.y = y;
+    this.title = title;
 
     this.parallax_shift = 20;
 
@@ -64,8 +65,18 @@ class Room {
     return {"x": this.parallax_middle_x, "y": this.parallax_middle_y}
   }
 
-  draw() {
+  create_room_label() {
+    push();
+    fill("black");
+    noStroke();
+    textSize(14);
+    textFont('Helvetica');
+    // fill(50);
+    text(this.title, (this.small_wall.coordinates.a.x + 10), this.small_wall.coordinates.a.y + 10, 300, 200); // Text wraps within text box
+    pop();
+  }
 
+  draw() {
     this.update_parallax();
 
     fill("#cfcdcf");
@@ -73,6 +84,7 @@ class Room {
     fill(242);
     this.drawWall(this.small_wall.coordinates);
 
+    // lines between corners small and big wall
     stroke(126);
     line(this.big_wall.coordinates.a.x, this.big_wall.coordinates.a.y, this.small_wall.coordinates.a.x, this.small_wall.coordinates.a.y);
     line(this.big_wall.coordinates.b.x, this.big_wall.coordinates.b.y, this.small_wall.coordinates.b.x, this.small_wall.coordinates.b.y);
@@ -81,5 +93,7 @@ class Room {
 
     // debug position
     circle(this.parallax_middle_x, this.parallax_middle_y, 5)
+
+    this.create_room_label()
   }
 }
