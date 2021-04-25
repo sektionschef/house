@@ -5,17 +5,20 @@ let SWITCH_LOGGING_LEVEL = "debug";
 let canvasWidth = 1400;
 let canvasHeight = 900;
 
-let brand_logo;
-// let house;
-let telephone;
-let telephone_retro;
-let whiteboard;
-
 let telephone_image;
 let whiteboard_image;
 let stairs_image;
 let luster_image;
 let pizza_island_image;
+let canvas_image;
+
+let brand_logo;
+// let house;
+let telephone;
+let telephone_retro;
+let whiteboard;
+let canvas;
+
 
 let furnitures;
 let room;
@@ -33,6 +36,7 @@ function preload() {
   stairs_image = loadImage('images/stairs.png');
   luster_image = loadImage('images/luster.png');
   pizza_island_image = loadImage('images/pizza_island.png');
+  canvas_image = loadImage('images/canvas.png');
 }
 
 function setup() {
@@ -46,6 +50,7 @@ function setup() {
   stairs_image.resize(stairs_image.width / 8, stairs_image.height / 8);
   luster_image.resize(luster_image.width / 14, luster_image.height / 14);
   pizza_island_image.resize(pizza_island_image.width / 4, pizza_island_image.height / 4);
+  canvas_image.resize(canvas_image.width / 10, canvas_image.height / 10);
 
   horizon_height = 750;
 
@@ -57,6 +62,7 @@ function setup() {
   luster = new Furniture(400, 400, luster_image, "oida");
   pizza_island = new Furniture(800, 600, pizza_island_image, "oida");
   telephone_retro = new Furniture(30, 30, telephone_image, 'https://teams.microsoft.com/l/meetup-join/19%3ameeting_YzA4YzdhMDAtMWUwYi00MmExLWEzZWMtMzU4Mjk5ODQ3YTJj%40thread.v2/0?context=%7b%22Tid%22%3a%22452b551c-4057-4e63-a6fe-63641fc132f9%22%2c%22Oid%22%3a%22e79d3def-9ee9-413a-b242-93cfd991115d%22%7d');
+  canvas = new Furniture(500, 500, canvas_image, "nothing");
 
   furnitures = [telephone, whiteboard, telephone_retro]
 
@@ -110,6 +116,8 @@ function draw() {
   pizza_island.draw(700, 570);
   telephone_retro.draw(room_retro.get_parallax_middle().x, room_retro.get_parallax_middle().y);
   // telephone_retro.draw(30, 30);
+  canvas.draw(600, 600);
+
 
   for (furniture of furnitures) {
     // furniture.draw(400, 400);
