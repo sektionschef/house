@@ -4,27 +4,32 @@ class Room {
     this.y = y;
     this.title = title;
 
-    this.parallax_shift = 20;
+    // add/subtract for parallax effect
+    this.parallax_shift = 10;
 
     this.small_wall = {
       "width": 300,
-      "height": 200,
+      "height": 150,
     }
 
     this.big_wall = {
       "width": 400,
-      "height": 250,
+      "height": 200,
     }
 
-    // start for item
-    this.middle_x = x;
-    this.middle_y = y + this.small_wall.height/2 + (this.big_wall.height - this.small_wall.height)/2;
-
+    // position of small wall
     this.small_wall.x = this.x - this.small_wall.width/2
     this.small_wall.y = this.y - this.small_wall.height/2
 
+    // position of big wall
     this.big_wall.x = this.x - this.big_wall.width/2
     this.big_wall.y = this.y - this.big_wall.height/2
+
+    // coordinate of middle
+    this.middle_x = this.x;
+    this.middle_y = this.y + this.small_wall.height/2 + (this.big_wall.height - this.small_wall.height)/2;
+    this.middle_y_ceiling = this.y - this.small_wall.height/2;
+
 
     this.small_wall.coordinates = {
       "a": {"x": this.small_wall.x, "y": this.small_wall.y},
@@ -65,6 +70,13 @@ class Room {
     return {"x": this.parallax_middle_x, "y": this.parallax_middle_y}
   }
 
+  get_parallax_middle_ceiling() {
+    // middle of the room ceilinge
+    this.parallax_middle_x = map(mouseX, 0, width, this.middle_x - (this.parallax_shift/2), this.middle_x + (this.parallax_shift/2));
+    this.parallax_middle_y_ceiling = map(mouseY, 0, height, this.middle_y_ceiling - (this.parallax_shift/2), this.middle_y_ceiling + (this.parallax_shift/2));
+    return {"x": this.parallax_middle_x, "y": this.parallax_middle_y_ceiling}
+  }
+
   create_room_label() {
     push();
     fill("black");
@@ -90,10 +102,7 @@ class Room {
     line(this.big_wall.coordinates.b.x, this.big_wall.coordinates.b.y, this.small_wall.coordinates.b.x, this.small_wall.coordinates.b.y);
     line(this.big_wall.coordinates.c.x, this.big_wall.coordinates.c.y, this.small_wall.coordinates.c.x, this.small_wall.coordinates.c.y);
     line(this.big_wall.coordinates.d.x, this.big_wall.coordinates.d.y, this.small_wall.coordinates.d.x, this.small_wall.coordinates.d.y);
+    this.create_room_label();
 
-    // debug position
-    circle(this.parallax_middle_x, this.parallax_middle_y, 5)
-
-    this.create_room_label()
   }
 }
