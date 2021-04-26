@@ -77,7 +77,8 @@ function setup() {
 
 function draw() {
 
-  background("#ffd223");
+  // background("#ffd223");
+  background("#9ed7e2");
   image(brand_logo, (width/2 - brand_logo.width/2), 50);
   // image(house, (width/2 - house.width/2), (height - house.height));
 
@@ -86,8 +87,25 @@ function draw() {
   push();
   // line(0, horizon_height, width, horizon_height);
   noStroke();
-  fill("#e6c84e")
+  fill("#9dc378")
   rect(0, horizon_height, width, horizon_height);
+  pop();
+
+  // sky
+  push();
+  // sun
+  noStroke();
+  fill("#fed789");
+  circle(300, 100, 80);
+  pop();
+
+  // roof
+  push();
+  noStroke();
+  fill("#a99a9e");
+  quad(100, 400, 900, 400, 850, 300, 150, 300);
+  fill("#786364");
+  rect(100, 400, 800, 20);
   pop();
 
   room_review.draw();
