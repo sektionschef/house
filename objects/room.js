@@ -1,8 +1,10 @@
 class Room {
-  constructor(x, y, title) {
+  constructor(x, y, title, color_back="#ece9e4", color_walls="#d7d4cf") {
     this.x = x;
     this.y = y;
     this.title = title;
+    this.color_back = color_back;
+    this.color_walls = color_walls;
 
     // add/subtract for parallax effect
     this.parallax_shift = 10;
@@ -91,18 +93,48 @@ class Room {
   draw() {
     this.update_parallax();
 
-    fill("#cfcdcf");
+    let edge_color = color(245);
+    let cut_wall = color(245);
+
+    push();
+    noStroke();
+    fill(this.color_walls);
     this.drawWall(this.big_wall.coordinates);
-    fill(242);
-    this.drawWall(this.small_wall.coordinates);
+    pop();
 
     // lines between corners small and big wall
-    stroke(126);
+    push();
+    strokeWeight(1);
+    stroke(edge_color);
     line(this.big_wall.coordinates.a.x, this.big_wall.coordinates.a.y, this.small_wall.coordinates.a.x, this.small_wall.coordinates.a.y);
     line(this.big_wall.coordinates.b.x, this.big_wall.coordinates.b.y, this.small_wall.coordinates.b.x, this.small_wall.coordinates.b.y);
     line(this.big_wall.coordinates.c.x, this.big_wall.coordinates.c.y, this.small_wall.coordinates.c.x, this.small_wall.coordinates.c.y);
     line(this.big_wall.coordinates.d.x, this.big_wall.coordinates.d.y, this.small_wall.coordinates.d.x, this.small_wall.coordinates.d.y);
     this.create_room_label();
+    pop();
 
+    push();
+    fill(this.color_back);
+    strokeWeight(1);
+    stroke(edge_color);
+    this.drawWall(this.small_wall.coordinates);
+    pop();
+
+    // walls as frames to the big wall
+    push();
+    strokeWeight(15);
+    stroke(cut_wall);
+    noFill();
+    quad(
+      this.big_wall.coordinates.a.x,
+      this.big_wall.coordinates.a.y,
+      this.big_wall.coordinates.b.x,
+      this.big_wall.coordinates.b.y,
+      this.big_wall.coordinates.c.x,
+      this.big_wall.coordinates.c.y,
+      this.big_wall.coordinates.d.x,
+      this.big_wall.coordinates.d.y,
+    )
+    pop();
   }
 }

@@ -66,18 +66,17 @@ function setup() {
 
   furnitures = [telephone, whiteboard, telephone_retro]
 
-  room_planning = new Room(300, 500, "Planning");
-  room_retro = new Room(700, 500, "Retro");
-  room_review = new Room(300, 700, "Review");
-  room_checkin = new Room(700, 700, "Checkin");
-  room_sales = new Room(1100, 700, "Sales");
+  room_planning = new Room(300, 500, "Planning", "#fbc579", "#ffddb3");
+  room_retro = new Room(700, 500, "Retro", "#ffdc8f", "#fcefc8");
+  room_review = new Room(300, 700, "Review", "#8ac5d9", "#cde8f1");
+  room_checkin = new Room(700, 700, "Checkin", "#8D88B3", "#ABA7C7");
+  room_sales = new Room(1100, 700, "Sales", "#82B758", "#9DC67C");
 
-  room_creative = new Room(1100, 200, "Creative");
+  room_creative = new Room(1100, 200, "Creative", "#6e7f8f", "#8B98A5");
 }
 
 function draw() {
 
-  // background("#ffd223");
   background("#9ed7e2");
   image(brand_logo, (width/2 - brand_logo.width/2), 50);
   // image(house, (width/2 - house.width/2), (height - house.height));
@@ -96,7 +95,20 @@ function draw() {
   // sun
   noStroke();
   fill("#fed789");
+  // fill("#ffd223");
   circle(300, 100, 80);
+  pop();
+
+  // cloud
+  //  move to function
+  push();
+  noStroke();
+  fill("#bbe3eb");
+  ellipse(50,50,60,50);
+  ellipse(80,40,60,50);
+  ellipse(130,50,60,50);
+  ellipse(70,70,60,50);
+  ellipse(110,65,60,50);
   pop();
 
   // roof
@@ -106,6 +118,14 @@ function draw() {
   quad(100, 400, 900, 400, 850, 300, 150, 300);
   fill("#786364");
   rect(100, 400, 800, 20);
+  pop();
+  // chimney
+  push();
+  noStroke();
+  fill(245);
+  rect(700, 260, 30, 40);
+  fill("#786364");
+  rect(695, 250, 40, 10);
   pop();
 
   room_review.draw();
