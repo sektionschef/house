@@ -7,17 +7,21 @@ let canvasHeight = 900;
 
 let telephone_image;
 let whiteboard_image;
-let stairs_image;
+let checkin_image;
 let luster_image;
-let pizza_island_image;
-let canvas_image;
+let food_court_image;
+let menu_image;
+let living_room_basic_image;
+let feli_image;
+let telescope_image;
 
 let brand_logo;
 // let house;
 let telephone;
 let telephone_retro;
 let whiteboard;
-let canvas;
+let menu;
+let living_room;
 
 
 let furnitures;
@@ -33,10 +37,13 @@ function preload() {
   // furnitures
   telephone_image = loadImage('images/telephone.png');
   whiteboard_image = loadImage('images/whiteboard.png');
-  stairs_image = loadImage('images/stairs.png');
+  checkin_image = loadImage('images/checkin.png');
   luster_image = loadImage('images/luster.png');
-  pizza_island_image = loadImage('images/pizza_island.png');
-  canvas_image = loadImage('images/canvas.png');
+  food_court_image = loadImage('images/food court 1.png');
+  menu_image = loadImage('images/menu.jpg');
+  living_room_basic_image = loadImage('images/test.png');
+  feli_image = loadImage('images/feli.png');
+  telescope_image = loadImage('images/telescope.png');
 }
 
 function setup() {
@@ -47,10 +54,13 @@ function setup() {
   //  resizing images
   telephone_image.resize(telephone_image.width / 50, telephone_image.height / 50);
   whiteboard_image.resize(whiteboard_image.width / 4, whiteboard_image.height / 4);
-  stairs_image.resize(stairs_image.width / 8, stairs_image.height / 8);
+  checkin_image.resize(checkin_image.width / 27, checkin_image.height / 27);
   luster_image.resize(luster_image.width / 14, luster_image.height / 14);
-  pizza_island_image.resize(pizza_island_image.width / 4, pizza_island_image.height / 4);
-  canvas_image.resize(canvas_image.width / 10, canvas_image.height / 10);
+  food_court_image.resize(food_court_image.width / 11, food_court_image.height / 11);
+  menu_image.resize(menu_image.width / 25, menu_image.height / 25);
+  living_room_basic_image.resize(living_room_basic_image.width / 3, living_room_basic_image.height / 3);
+  feli_image.resize(feli_image.width / 4, feli_image.height / 4);
+  telescope_image.resize(telescope_image.width / 40, telescope_image.height / 40);
 
   horizon_height = 750;
 
@@ -58,13 +68,16 @@ function setup() {
 
   telephone = new Furniture(600, 650, telephone_image, 'https://teams.microsoft.com/l/meetup-join/19%3ameeting_YzA4YzdhMDAtMWUwYi00MmExLWEzZWMtMzU4Mjk5ODQ3YTJj%40thread.v2/0?context=%7b%22Tid%22%3a%22452b551c-4057-4e63-a6fe-63641fc132f9%22%2c%22Oid%22%3a%22e79d3def-9ee9-413a-b242-93cfd991115d%22%7d');
   whiteboard = new Furniture(550, 450, whiteboard_image, "https://miro.com/app/board/o9J_ktEzqBk=/");
-  stairs = new Furniture(300, 300, stairs_image, "oida");
+  checkin = new Furniture(300, 300, checkin_image, "oida");
   luster = new Furniture(400, 400, luster_image, "oida");
-  pizza_island = new Furniture(800, 600, pizza_island_image, "oida");
+  food_court = new Furniture(800, 600, food_court_image, "oida");
   telephone_retro = new Furniture(30, 30, telephone_image, 'https://teams.microsoft.com/l/meetup-join/19%3ameeting_YzA4YzdhMDAtMWUwYi00MmExLWEzZWMtMzU4Mjk5ODQ3YTJj%40thread.v2/0?context=%7b%22Tid%22%3a%22452b551c-4057-4e63-a6fe-63641fc132f9%22%2c%22Oid%22%3a%22e79d3def-9ee9-413a-b242-93cfd991115d%22%7d');
-  canvas = new Furniture(500, 500, canvas_image, "nothing");
+  menu = new Furniture(500, 500, menu_image, "nothing");
+  living_room_basic = new Furniture(0, 0, living_room_basic_image, "nothing");
+  feli = new Furniture(0, 0, feli_image, "https://teams.microsoft.com/_#/conversations/19:1f3c38c5-449e-4242-a151-a893bcd0777a_6ff86881-25df-49da-a9a8-f06abd7d85bc@unq.gbl.spaces?ctx=chat");
+  telescope = new Furniture(0, 0, telescope_image, "nothing");
 
-  furnitures = [telephone, whiteboard, telephone_retro]
+  furnitures = [telephone, whiteboard, telephone_retro, feli]
 
   room_planning = new Room(300, 500, "Planning", "#fbc579", "#ffddb3");
   room_retro = new Room(700, 500, "Retro", "#ffdc8f", "#fcefc8");
@@ -139,11 +152,12 @@ function draw() {
 
   // parallax middle line
   let parallax_middle = room_review.get_parallax_middle();
+  drawDebugPos(parallax_middle.x, parallax_middle.y, "parallax_middle")
   telephone.draw(parallax_middle.x, parallax_middle.y);
   whiteboard.draw(parallax_middle.x, parallax_middle.y);
-  drawDebugPos(parallax_middle.x, parallax_middle.y, "parallax_middle")
+  telescope.draw(parallax_middle.x - 70, parallax_middle.y - 10);
 
-  stairs.draw(room_checkin.small_wall.x + room_checkin.small_wall.width/2, room_checkin.small_wall.y + room_checkin.small_wall.height + 5);
+  checkin.draw(room_checkin.small_wall.x + room_checkin.small_wall.width/2, room_checkin.small_wall.y + room_checkin.small_wall.height + 5);
   let parallax_middle_ceiling = room_checkin.get_parallax_middle_ceiling();
   // luster.draw(room_checkin.small_wall.x + room_checkin.small_wall.width/2, room_checkin.small_wall.y + luster_image.height);
   luster.draw(parallax_middle_ceiling.x, parallax_middle_ceiling.y + luster_image.height);
@@ -151,10 +165,14 @@ function draw() {
   drawDebugPos(parallax_middle_ceiling.x, parallax_middle_ceiling.y, "parallax_middle_ceiling")
 
   // retro
-  pizza_island.draw(700, 570);
-  telephone_retro.draw(room_retro.get_parallax_middle().x, room_retro.get_parallax_middle().y);
-  // telephone_retro.draw(30, 30);
-  canvas.draw(600, 600);
+  food_court.draw(700, 590);
+  menu.draw(room_retro.get_parallax_middle().x - 90, room_retro.get_parallax_middle().y);
+  telephone_retro.draw(room_retro.get_parallax_middle().x - 70, room_retro.get_parallax_middle().y);
+
+  // living room furniture
+  living_room_basic.draw(300, 585);
+  feli.draw(1200, 280);
+
 
 
   for (furniture of furnitures) {
@@ -170,6 +188,7 @@ function mousePressed() {
   // soundtrack.play();
   telephone.clicked();
   whiteboard.clicked();
+  feli.clicked();
 }
 
 function drawDebugPos(x, y, label) {

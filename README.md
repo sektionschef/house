@@ -1,21 +1,24 @@
 # Digitale Räume
 
+## features first prototype
+
+- done - hotline
+- Confluence page
+- done - Feli button
+- Miro board - public
+
 ## todos
 
 - furniture without link
 - class for Rooms and Furnitures
-- inspiration images documented
-- colors per room
-- roof
+- roof parallax
 - sun - moving due to daytime
 - debug position of room
 - sun with logo and amb color
-- chimney
-
-## ideas
-
+- fence
+- moving clouds
 - plane with forecast goals
-- ics -
+- ics entries
 - flask for data stuff
 
 ## why
@@ -37,3 +40,16 @@
 
 - <https://editor.p5js.org/seak/sketches/SJ8gHRzp->
 - <https://editor.p5js.org/Really/sketches/Bk8uOudhb>
+
+## Licence
+
+- copyright illustrations interior: Vectorbox Studio <https://www.vecteezy.com/members/vectorbox_studio>
+
+  - telephone: [Telephone Vectors by Vecteezy](https://www.vecteezy.com/free-vector/telephone)
+  - telephone 2 [Vector Vectors by Vecteezy](https://www.vecteezy.com/free-vector/vector)
+  - checkin illustration - [Arrow vector created by gstudioimagen - www.freepik.com](https://www.freepik.com/vectors/arrow)
+  - telescope - [Telescope Vectors by Vecteezy](https://www.vecteezy.com/free-vector/telescope)
+  - boards - [Whiteboard Vectors by Vecteezy](https://www.vecteezy.com/free-vector/whiteboard)
+  - food court - [Restaurant Vectors by Vecteezy](https://www.vecteezy.com/free-vector/restaurant)
+  - pizza oven - [Pizza Oven Vectors by Vecteezy](https://www.vecteezy.com/free-vector/pizza-oven)
+  - menu restaurant [Grunge Vectors by Vecteezy](https://www.vecteezy.com/free-vector/grunge)

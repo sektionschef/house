@@ -110,7 +110,6 @@ class Room {
     line(this.big_wall.coordinates.b.x, this.big_wall.coordinates.b.y, this.small_wall.coordinates.b.x, this.small_wall.coordinates.b.y);
     line(this.big_wall.coordinates.c.x, this.big_wall.coordinates.c.y, this.small_wall.coordinates.c.x, this.small_wall.coordinates.c.y);
     line(this.big_wall.coordinates.d.x, this.big_wall.coordinates.d.y, this.small_wall.coordinates.d.x, this.small_wall.coordinates.d.y);
-    this.create_room_label();
     pop();
 
     push();
@@ -136,5 +135,7 @@ class Room {
       this.big_wall.coordinates.d.y,
     )
     pop();
+
+    this.create_room_label();
   }
 }
