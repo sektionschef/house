@@ -1,6 +1,6 @@
 // trace, debug, info, warn, error
-// let SWITCH_LOGGING_LEVEL = "info"
-let SWITCH_LOGGING_LEVEL = "debug";
+let SWITCH_LOGGING_LEVEL = "info"
+// let SWITCH_LOGGING_LEVEL = "debug";
 
 let canvasWidth = 1400;
 let canvasHeight = 900;
@@ -166,7 +166,7 @@ function draw() {
 
   // retro
   food_court.draw(700, 590);
-  menu.draw(room_retro.get_parallax_middle().x - 90, room_retro.get_parallax_middle().y);
+  menu.draw(room_retro.get_parallax_middle().x - 110, room_retro.get_parallax_middle().y);
   telephone_retro.draw(room_retro.get_parallax_middle().x - 70, room_retro.get_parallax_middle().y);
 
   // living room furniture

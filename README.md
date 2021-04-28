@@ -6,6 +6,7 @@
 - Confluence page
 - done - Feli button
 - Miro board - public
+- youtube video
 
 ## todos
 
