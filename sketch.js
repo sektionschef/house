@@ -72,12 +72,12 @@ function setup() {
   luster = new Furniture(400, 400, luster_image, "oida");
   food_court = new Furniture(800, 600, food_court_image, "oida");
   telephone_retro = new Furniture(30, 30, telephone_image, 'https://teams.microsoft.com/l/meetup-join/19%3ameeting_YzA4YzdhMDAtMWUwYi00MmExLWEzZWMtMzU4Mjk5ODQ3YTJj%40thread.v2/0?context=%7b%22Tid%22%3a%22452b551c-4057-4e63-a6fe-63641fc132f9%22%2c%22Oid%22%3a%22e79d3def-9ee9-413a-b242-93cfd991115d%22%7d');
-  menu = new Furniture(500, 500, menu_image, "nothing");
+  menu = new Furniture(500, 500, menu_image, "https://miro.com/app/board/o9J_lWUKbyE=/");
   living_room_basic = new Furniture(0, 0, living_room_basic_image, "nothing");
   feli = new Furniture(0, 0, feli_image, "https://teams.microsoft.com/_#/conversations/19:1f3c38c5-449e-4242-a151-a893bcd0777a_6ff86881-25df-49da-a9a8-f06abd7d85bc@unq.gbl.spaces?ctx=chat");
   telescope = new Furniture(0, 0, telescope_image, "nothing");
 
-  furnitures = [telephone, whiteboard, telephone_retro, feli]
+  furnitures = [telephone, whiteboard, telephone_retro, feli, menu]
 
   room_planning = new Room(300, 500, "Planning", "#fbc579", "#ffddb3");
   room_retro = new Room(700, 500, "Retro", "#ffdc8f", "#fcefc8");
@@ -189,6 +189,7 @@ function mousePressed() {
   telephone.clicked();
   whiteboard.clicked();
   feli.clicked();
+  menu.clicked();
 }
 
 function drawDebugPos(x, y, label) {
