@@ -1,5 +1,24 @@
 # Digitale Räume
 
+- was nehme ich mit ins Meeting. mindset, unterlagen
+- retro telefon - einfacher keine plattform wie zoom, teams, jitsi
+
+## feedback 27.04.
+
+- raum individualisierbar - ziel des meetings, mindset
+- was ist klickbar?
+- mobil?
+- hilfe kontakt
+- tooltip
+- Obermenü zum reinklicken, Detailansicht
+- Retro im Hintergrund
+- Kreativtechniken
+- wer nimmt teil beim Meeting
+- amb Farben
+- slack kanal ergänzen
+- confluence link
+- javascript schnipsel - bitte dreh dein handy
+
 ## features first prototype
 
 - done - hotline
