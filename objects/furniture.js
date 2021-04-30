@@ -34,7 +34,13 @@ class Furniture {
 
   clicked() {
     if (this.if_hover) {
-      window.open(this.target_link)
+      swal({
+        title: "Good job!",
+        text: "You clicked the button!",
+        icon: "success",
+        button: "Aww yiss!",
+      });
+      // window.open(this.target_link)
     }
   }
 }

@@ -7,10 +7,10 @@
 
 - raum individualisierbar - ziel des meetings, mindset
 - was ist klickbar?
+- Obermenü zum reinklicken, Detailansicht
 - mobil?
 - hilfe kontakt
 - tooltip
-- Obermenü zum reinklicken, Detailansicht
 - Retro im Hintergrund
 - Kreativtechniken
 - wer nimmt teil beim Meeting
@@ -29,6 +29,10 @@
 
 ## todos
 
+- licht in räumen
+- farben ambuzzador
+- zwischenmenü + seite auf contents
+- ein element für userführung
 - furniture without link
 - class for Rooms and Furnitures
 - roof parallax
@@ -73,3 +77,7 @@
   - food court - [Restaurant Vectors by Vecteezy](https://www.vecteezy.com/free-vector/restaurant)
   - pizza oven - [Pizza Oven Vectors by Vecteezy](https://www.vecteezy.com/free-vector/pizza-oven)
   - menu restaurant [Grunge Vectors by Vecteezy](https://www.vecteezy.com/free-vector/grunge)
+  - telephone icon [Vector Vectors by Vecteezy](https://www.vecteezy.com/free-vector/vector)
+  - blackboard [Web Vectors by Vecteezy](https://www.vecteezy.com/free-vector/web)
+  - blackboard icon 2 [Lines Vectors by Vecteezy](https://www.vecteezy.com/free-vector/lines)
+  - power button [Power Icon Vectors by Vecteezy](https://www.vecteezy.com/free-vector/power-icon)
