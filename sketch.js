@@ -1,6 +1,6 @@
 // trace, debug, info, warn, error
-let SWITCH_LOGGING_LEVEL = "info"
-// let SWITCH_LOGGING_LEVEL = "debug";
+// let SWITCH_LOGGING_LEVEL = "info"
+let SWITCH_LOGGING_LEVEL = "debug";
 
 let canvasWidth = 1400;
 let canvasHeight = 900;
@@ -36,6 +36,7 @@ function preload() {
 
   // furnitures
   power_icon_image = loadImage('images/power_icon.svg');
+  // power_icon_image = loadImage('images/power_icon_amb.svg');
   // whiteboard_image = loadImage('images/whiteboard.png');
   whiteboard_image = loadImage('images/whiteboard_icon.png');
   checkin_image = loadImage('images/checkin.png');
@@ -109,7 +110,7 @@ function draw() {
   // sun
   noStroke();
   fill("#fed789");
-  // fill("#ffd223");
+  // fill("#ffd223");  // amb yellow
   circle(300, 100, 80);
   pop();
 
@@ -123,23 +124,6 @@ function draw() {
   ellipse(130,50,60,50);
   ellipse(70,70,60,50);
   ellipse(110,65,60,50);
-  pop();
-
-  // roof
-  push();
-  noStroke();
-  fill("#a99a9e");
-  quad(100, 400, 900, 400, 850, 300, 150, 300);
-  fill("#786364");
-  rect(100, 400, 800, 20);
-  pop();
-  // chimney
-  push();
-  noStroke();
-  fill(245);
-  rect(700, 260, 30, 40);
-  fill("#786364");
-  rect(695, 250, 40, 10);
   pop();
 
   room_review.draw();
@@ -174,7 +158,7 @@ function draw() {
   living_room_basic.draw(300, 585);
   feli.draw(1200, 280);
 
-
+  drawRoof();
 
   for (furniture of furnitures) {
     // furniture.draw(400, 400);
@@ -206,4 +190,57 @@ function drawDebugPos(x, y, label) {
     circle(x, y, 5);
     pop();
   }
+}
+
+function drawRoof() {
+  // ROOF
+  // get the roof coords
+  let start_roof = {
+    x: room_planning.big_wall.coordinates.a.x - room_planning.wall_thickness/2,
+    y: room_planning.big_wall.coordinates.a.y - room_planning.wall_thickness/2
+  }
+  let end_roof = {
+    x: room_retro.big_wall.coordinates.b.x + room_retro.wall_thickness/2,
+    y: room_retro.big_wall.coordinates.b.y - room_retro.wall_thickness/2
+  }
+  drawDebugPos(start_roof.x, start_roof.y, "start roof")
+  drawDebugPos(end_roof.x, end_roof.y, "end roof")
+
+  let coverWidth = end_roof.x - start_roof.x;
+  let coverHeight = 20;
+  let cover = {
+    a: {x: start_roof.x, y:start_roof.y},
+    b: {x: start_roof.x, y: start_roof.y - coverHeight},
+    c: {x: start_roof.x + coverWidth, y: start_roof.y - coverHeight},
+    d: {x: start_roof.x + coverWidth, y: start_roof.y},
+  }
+
+  push();
+  // roof
+  noStroke();
+  fill("#a99a9e");
+  quad(
+    cover.b.x, cover.b.y,
+    cover.c.x, cover.c.y,
+    850, 300,
+    150, 300
+  );
+  // cover
+  fill("#786364");
+  // rect(start_roof.x, start_roof.y, 800, 20);
+  quad(
+    cover.a.x, cover.a.y,
+    cover.b.x, cover.b.y,
+    cover.c.x, cover.c.y,
+    cover.d.x, cover.d.y,
+  );
+  pop();
+  // chimney
+  push();
+  noStroke();
+  fill(245);
+  rect(700, 260, 30, 40);
+  fill("#786364");
+  rect(695, 250, 40, 10);
+  pop();
 }

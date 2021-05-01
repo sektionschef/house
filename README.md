@@ -3,8 +3,15 @@
 - was nehme ich mit ins Meeting. mindset, unterlagen
 - retro telefon - einfacher keine plattform wie zoom, teams, jitsi
 
-## feedback 27.04.
+## feedback 27.04\. und 30\. 4.
 
+- logo am dach
+- popup mit mindsetter -
+- dann nackate seite mit videos und tools
+- licht im raum wenn aktiv
+- amb CI - individualisierbar für unternehmen
+- dach mitbewegen
+- style the modal - button color, und hintergrundfarbe siehe docs
 - raum individualisierbar - ziel des meetings, mindset
 - was ist klickbar?
 - Obermenü zum reinklicken, Detailansicht
@@ -64,6 +71,10 @@
 
 - <https://editor.p5js.org/seak/sketches/SJ8gHRzp->
 - <https://editor.p5js.org/Really/sketches/Bk8uOudhb>
+
+### modal
+
+using <https://sweetalert.js.org/>
 
 ## Licence
 

@@ -35,10 +35,39 @@ class Furniture {
   clicked() {
     if (this.if_hover) {
       swal({
-        title: "Good job!",
-        text: "You clicked the button!",
-        icon: "success",
-        button: "Aww yiss!",
+        title: "Plan für die Woche",
+        text: "Geschmeidig bleiben!",
+        // icon: "success",
+        buttons: {
+          enter: {
+            text: "Call",
+            value: "call",
+            closeModal: false,
+          },
+          whiteboard: true,
+          tools: true,
+          cancel: "Cancel",
+        },
+      })
+      .then((value) => {
+        switch (value) {
+
+          case "call":
+            window.open(this.target_link, "_blank");
+            break;
+
+          case "whiteboard":
+            window.open("https://miro.com/app/board/o9J_lWUKbyE=/");
+            break;
+
+          case "tools":
+            // swal("Gotcha!", "Pikachu was caught!", "success");
+            window.open("https://www.orf.at")
+            break;
+
+          default:
+            // swal("Got away safely!");
+        }
       });
       // window.open(this.target_link)
     }

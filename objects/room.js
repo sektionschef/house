@@ -6,6 +6,8 @@ class Room {
     this.color_back = color_back;
     this.color_walls = color_walls;
 
+    this.wall_thickness = 15;
+
     // add/subtract for parallax effect
     this.parallax_shift = 10;
 
@@ -121,7 +123,7 @@ class Room {
 
     // walls as frames to the big wall
     push();
-    strokeWeight(15);
+    strokeWeight(this.wall_thickness);
     stroke(cut_wall);
     noFill();
     quad(
