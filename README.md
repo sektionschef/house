@@ -5,9 +5,7 @@
 
 ## planned open house
 
-- licht im raum wenn aktiv
 - flying creative room
-- Räume stylen
 - dann nackate seite mit videos und tools
 - musik
 - amb CI - mit farbe raum
@@ -18,6 +16,8 @@
 
 ## done
 
+- Räume stylen
+- licht im raum wenn aktiv
 - popup mit mindsetter + ziele
 - dach mitbewegen
 - was ist klickbar? - Ein Icon
@@ -64,6 +64,10 @@ using <https://sweetalert.js.org/>
 ### flying objects
 
 <https://editor.p5js.org/kriziafern/sketches/SkqpIVqgf>
+
+### smoke
+
+<https://editor.p5js.org/aferriss/sketches/Hki0npbjG>
 
 ### old color palette
 

@@ -17,7 +17,6 @@ let brand_logo;
 let living_room;
 let fair;
 
-
 let furnitures;
 let room;
 
@@ -97,6 +96,9 @@ function setup() {
 
   // who is active
   room_retro.active = true;
+  room_creative.active = true;
+
+  steams = new Steams();
 }
 
 function draw() {
@@ -135,6 +137,12 @@ function draw() {
   ellipse(110,65,60,50);
   pop();
 
+  steams.heat(room_creative.get_parallax_middle().x - 180, room_creative.get_parallax_middle().y);
+  steams.heat(room_creative.get_parallax_middle().x + 180, room_creative.get_parallax_middle().y);
+  steams.heat(room_creative.get_parallax_middle().x - 100, room_creative.get_parallax_middle().y - 30);
+  steams.heat(room_creative.get_parallax_middle().x + 100, room_creative.get_parallax_middle().y - 30);
+
+  room_creative.fly();
   for (room of rooms) {
     room.draw();
   }
@@ -154,7 +162,7 @@ function draw() {
   living_room_basic.draw(300, 585);
 
 
-  fair.draw(room_creative.floor_middle.x, room_creative.floor_middle.y + 10);
+  fair.draw(room_creative.get_parallax_middle().x, room_creative.get_parallax_middle().y - 10);
   // feli.draw(1200, 280);
   concessions.draw(room_sales.floor_middle.x, room_sales.floor_middle.y + 10);
   checkin.draw(room_checkin.floor_middle.x, room_checkin.floor_middle.y + 15);
@@ -168,6 +176,7 @@ function draw() {
   power_icon_creative.draw(room_creative.get_parallax_middle().x, room_creative.get_parallax_middle().y - 10);
 
   drawRoof();
+
 
   drawDebugPos(room_creative.big_wall.coordinates.a.x, room_creative.big_wall.coordinates.a.y, "A");
   drawDebugPos(room_creative.big_wall.coordinates.b.x, room_creative.big_wall.coordinates.b.y, "B");

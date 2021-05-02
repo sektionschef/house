@@ -9,10 +9,12 @@ class Room {
     this.color_walls_original = color_walls;
 
     this.wall_thickness = 15;
-    this.edge_color = color(245);
-    this.cut_wall = color(245);
+    // this.edge_color = color(245);
+    this.edge_color = color(200);
+    this.cut_wall = color(235);
 
     this.active = false;
+    this.speed = 1;
 
     // add/subtract for parallax effect
     this.parallax_shift = 10;
@@ -27,6 +29,11 @@ class Room {
       "height": 200,
     }
 
+    this.basicCoordinates()
+    this.get_floor_middle()
+  }
+
+  basicCoordinates() {
     // position of small wall
     this.small_wall.x = this.x - this.small_wall.width/2
     this.small_wall.y = this.y - this.small_wall.height/2
@@ -47,8 +54,6 @@ class Room {
       "c": {"x": this.small_wall.x + this.small_wall.width, "y": this.small_wall.y + this.small_wall.height},
       "d": {"x": this.small_wall.x, "y": this.small_wall.y + this.small_wall.height}
     }
-
-    this.get_floor_middle()
   }
 
   drawWall(wall_object) {
@@ -90,7 +95,7 @@ class Room {
   }
 
   get_parallax_middle_ceiling() {
-    // middle of the room ceilinge
+    // middle of the room ceiling
     this.parallax_middle_x = map(mouseX, 0, width, this.middle_x - (this.parallax_shift/2), this.middle_x + (this.parallax_shift/2));
     this.parallax_middle_y_ceiling = map(mouseY, 0, height, this.middle_y_ceiling - (this.parallax_shift/2), this.middle_y_ceiling + (this.parallax_shift/2));
     return {"x": this.parallax_middle_x, "y": this.parallax_middle_y_ceiling}
@@ -103,7 +108,7 @@ class Room {
     textSize(14);
     textFont('Helvetica');
     // fill(50);
-    text(this.title, (this.small_wall.coordinates.a.x + 10), this.small_wall.coordinates.a.y + 10, 300, 200); // Text wraps within text box
+    text(this.title, (this.big_wall.coordinates.a.x + 10), this.big_wall.coordinates.a.y + 10, 300, 200); // Text wraps within text box
     pop();
   }
 
@@ -184,5 +189,11 @@ class Room {
       )
       pop();
     }
+  }
+
+  fly() {
+    this.x += random(-this.speed, this.speed);
+    this.y += random(-this.speed, this.speed);
+    this.basicCoordinates()
   }
 }
