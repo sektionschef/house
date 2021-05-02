@@ -43,7 +43,7 @@ class Furniture {
         // icon: "success",
         buttons: {
           enter: {
-            text: "Call",
+            text: "📞 Call",
             value: "call",
             closeModal: false,
           },
@@ -73,7 +73,7 @@ class Furniture {
         // icon: "success",
         buttons: {
           enter: {
-            text: "Call",
+            text: "📞 Call",
             value: "call",
             closeModal: false,
           },
@@ -103,7 +103,7 @@ class Furniture {
         // icon: "success",
         buttons: {
           enter: {
-            text: "Call",
+            text: "📞 Call",
             value: "call",
             closeModal: false,
           },
@@ -133,7 +133,7 @@ class Furniture {
         // icon: "success",
         buttons: {
           enter: {
-            text: "Call",
+            text: "📞 Call",
             value: "call",
             closeModal: false,
           },
@@ -169,7 +169,7 @@ class Furniture {
         // icon: "success",
         buttons: {
           enter: {
-            text: "Call",
+            text: "📞 Call",
             value: "call",
             closeModal: false,
           },
@@ -199,7 +199,7 @@ class Furniture {
         // icon: "success",
         buttons: {
           enter: {
-            text: "Call",
+            text: "📞 Call",
             value: "call",
             closeModal: false,
           },

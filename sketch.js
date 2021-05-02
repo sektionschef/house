@@ -48,7 +48,7 @@ function setup() {
   resizeRelative(living_room_basic_image, 3);
   resizeRelative(feli_image, 4);
   resizeRelative(fair_image, 6);
-  resizeRelative(brand_logo, 10);
+  resizeRelative(brand_logo, 8);
   resizeRelative(concessions_image, 12);
   resizeRelative(checkin_image, 4);
 
@@ -97,6 +97,7 @@ function setup() {
   // who is active
   room_retro.active = true;
   room_creative.active = true;
+  room_checkin.active = true;
 
   steams = new Steams();
   clouds = new Clouds();
