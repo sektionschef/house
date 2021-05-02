@@ -6,6 +6,7 @@
 ## planned open house
 
 - licht im raum wenn aktiv
+- flying creative room
 - Räume stylen
 - dann nackate seite mit videos und tools
 - musik
@@ -60,6 +61,10 @@
 
 using <https://sweetalert.js.org/>
 
+### flying objects
+
+<https://editor.p5js.org/kriziafern/sketches/SkqpIVqgf>
+
 ## Licence
 
 - copyright illustrations interior: Vectorbox Studio <https://www.vecteezy.com/members/vectorbox_studio>
@@ -77,3 +82,7 @@ using <https://sweetalert.js.org/>
   - blackboard icon 2 [Lines Vectors by Vecteezy](https://www.vecteezy.com/free-vector/lines)
   - power button [Power Icon Vectors by Vecteezy](https://www.vecteezy.com/free-vector/power-icon)
   - fair [Fair Vectors by Vecteezy](https://www.vecteezy.com/free-vector/fair)
+  - museum - <https://www.freepik.com/premium-vector/museum-interior-flat-vector-illustration_2867313.htm>
+  - concessions - [Museum Vectors by Vecteezy](https://www.vecteezy.com/free-vector/museum)
+  - bathroom - [Glass Vectors by Vecteezy](https://www.vecteezy.com/free-vector/glass)
+  - alterantive for checkin -> <https://www.vecteezy.com/vector-art/229812-vector-interior-furniture-design-illustration>

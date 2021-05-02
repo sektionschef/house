@@ -1,6 +1,6 @@
 // trace, debug, info, warn, error
-// let SWITCH_LOGGING_LEVEL = "info"
-let SWITCH_LOGGING_LEVEL = "debug";
+let SWITCH_LOGGING_LEVEL = "info"
+// let SWITCH_LOGGING_LEVEL = "debug";
 
 let canvasWidth = 1400;
 let canvasHeight = 900;
@@ -10,6 +10,8 @@ let food_court_image;
 let living_room_basic_image;
 let feli_image;
 let fair_image;
+let concessions_image;
+let checkin_image
 
 let brand_logo;
 let living_room;
@@ -31,6 +33,8 @@ function preload() {
   living_room_basic_image = loadImage('images/test.png');
   feli_image = loadImage('images/feli.png');
   fair_image = loadImage('images/fair.svg');
+  concessions_image = loadImage('images/concessions.svg');
+  checkin_image = loadImage('images/checkin.svg');
 }
 
 function setup() {
@@ -46,12 +50,16 @@ function setup() {
   resizeRelative(feli_image, 4);
   resizeRelative(fair_image, 6);
   resizeRelative(brand_logo, 10);
+  resizeRelative(concessions_image, 12);
+  resizeRelative(checkin_image, 4);
 
   food_court = new Furniture(800, 600, food_court_image, "oida");
   power_icon = new Furniture(600, 650, power_icon_image, "none");
   living_room_basic = new Furniture(0, 0, living_room_basic_image, "nothing");
   feli = new Furniture(0, 0, feli_image, "https://teams.microsoft.com/_#/conversations/19:1f3c38c5-449e-4242-a151-a893bcd0777a_6ff86881-25df-49da-a9a8-f06abd7d85bc@unq.gbl.spaces?ctx=chat");
   fair = new Furniture( 0, 0, fair_image, "");
+  concessions = new Furniture( 0, 0, concessions_image, "");
+  checkin = new Furniture( 0, 0, checkin_image, "");
 
   furnitures = [power_icon, feli]
 
@@ -122,7 +130,6 @@ function draw() {
 
   // living room furniture
   living_room_basic.draw(300, 585);
-  feli.draw(1200, 280);
 
   drawRoof();
 
@@ -130,7 +137,11 @@ function draw() {
 
   power_icon.draw(room_retro.get_parallax_middle().x, room_retro.get_parallax_middle().y - 10);
 
-  fair.draw(room_creative.floor_middle.x, room_creative.floor_middle.y);
+  fair.draw(room_creative.floor_middle.x, room_creative.floor_middle.y + 10);
+  // feli.draw(1200, 280);
+
+  concessions.draw(room_sales.floor_middle.x, room_sales.floor_middle.y + 10);
+  checkin.draw(room_checkin.floor_middle.x, room_checkin.floor_middle.y + 15);
 
   drawDebugPos(room_creative.big_wall.coordinates.a.x, room_creative.big_wall.coordinates.a.y, "A");
   drawDebugPos(room_creative.big_wall.coordinates.b.x, room_creative.big_wall.coordinates.b.y, "B");
