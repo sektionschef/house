@@ -99,18 +99,16 @@ function setup() {
   room_creative.active = true;
 
   steams = new Steams();
+  clouds = new Clouds();
 }
 
 function draw() {
 
   background("#9ed7e2");
-  image(brand_logo, (width/2 - brand_logo.width/2), 50);
-  // image(house, (width/2 - house.width/2), (height - house.height));
 
   cursor(ARROW);
 
   push();
-  // line(0, horizon_height, width, horizon_height);
   noStroke();
   fill("#9dc378")
   rect(0, horizon_height, width, horizon_height);
@@ -125,17 +123,8 @@ function draw() {
   circle(300, 100, 80);
   pop();
 
-  // cloud
-  //  move to function
-  push();
-  noStroke();
-  fill("#bbe3eb");
-  ellipse(50,50,60,50);
-  ellipse(80,40,60,50);
-  ellipse(130,50,60,50);
-  ellipse(70,70,60,50);
-  ellipse(110,65,60,50);
-  pop();
+  clouds.display();
+  image(brand_logo, (width/2 - brand_logo.width/2), 50);
 
   steams.heat(room_creative.get_parallax_middle().x - 180, room_creative.get_parallax_middle().y);
   steams.heat(room_creative.get_parallax_middle().x + 180, room_creative.get_parallax_middle().y);
