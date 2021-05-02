@@ -3,51 +3,35 @@
 - was nehme ich mit ins Meeting. mindset, unterlagen
 - retro telefon - einfacher keine plattform wie zoom, teams, jitsi
 
-## feedback 27.04\. und 30\. 4.
+## planned open house
 
-- logo am dach
-- popup mit mindsetter -
-- dann nackate seite mit videos und tools
 - licht im raum wenn aktiv
-- amb CI - individualisierbar für unternehmen
-- dach mitbewegen
+- Räume stylen
+- dann nackate seite mit videos und tools
+- musik
+- amb CI - mit farbe raum
+- firlefanz - fence, tree, moving clouds,
 - style the modal - button color, und hintergrundfarbe siehe docs
-- raum individualisierbar - ziel des meetings, mindset
-- was ist klickbar?
-- Obermenü zum reinklicken, Detailansicht
+- logo am dach
+- Kreativtechniken
+
+## done
+
+- popup mit mindsetter + ziele
+- dach mitbewegen
+- was ist klickbar? - Ein Icon
+
+## backlog
+
+- furniture without link
 - mobil?
 - hilfe kontakt
 - tooltip
-- Retro im Hintergrund
-- Kreativtechniken
 - wer nimmt teil beim Meeting
-- amb Farben
 - slack kanal ergänzen
-- confluence link
 - javascript schnipsel - bitte dreh dein handy
-
-## features first prototype
-
-- done - hotline
-- Confluence page
-- done - Feli button
-- Miro board - public
-- youtube video
-
-## todos
-
-- licht in räumen
-- farben ambuzzador
-- zwischenmenü + seite auf contents
-- ein element für userführung
-- furniture without link
 - class for Rooms and Furnitures
-- roof parallax
 - sun - moving due to daytime
-- debug position of room
-- sun with logo and amb color
-- fence
-- moving clouds
 - plane with forecast goals
 - ics entries
 - flask for data stuff
