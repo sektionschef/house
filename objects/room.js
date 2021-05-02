@@ -1,14 +1,18 @@
 class Room {
-  constructor(x, y, title, color_back="#ece9e4", color_walls="#d7d4cf") {
+  constructor(x, y, title, color_back=color(220), color_walls=color(200)) {
     this.x = x;
     this.y = y;
     this.title = title;
     this.color_back = color_back;
     this.color_walls = color_walls;
+    this.color_back_original = color_back;
+    this.color_walls_original = color_walls;
 
     this.wall_thickness = 15;
     this.edge_color = color(245);
     this.cut_wall = color(245);
+
+    this.active = false;
 
     // add/subtract for parallax effect
     this.parallax_shift = 10;
@@ -106,6 +110,8 @@ class Room {
   draw() {
     this.update_parallax();
 
+    this.changeStateColor();
+
     push();
     noStroke();
     fill(this.color_walls);
@@ -149,22 +155,34 @@ class Room {
     this.create_room_label();
   }
 
-  drawInactive() {
+  changeStateColor() {
+    if (this.active) {
+      this.color_back = color('#ffdc8f');
+      this.color_walls = color('#fcefc8');
+    } else {
+      this.color_back = this.color_back_original;
+      this.color_walls = this.color_walls_original;
+    }
+  }
+
+  drawState() {
     // inactive curtain
-    push();
-    strokeWeight(this.wall_thickness);
-    stroke(this.cut_wall);
-    fill(50, 150);
-    quad(
-      this.big_wall.coordinates.a.x,
-      this.big_wall.coordinates.a.y,
-      this.big_wall.coordinates.b.x,
-      this.big_wall.coordinates.b.y,
-      this.big_wall.coordinates.c.x,
-      this.big_wall.coordinates.c.y,
-      this.big_wall.coordinates.d.x,
-      this.big_wall.coordinates.d.y,
-    )
-    pop();
+    if (this.active == false) {
+      push();
+      strokeWeight(this.wall_thickness);
+      stroke(this.cut_wall);
+      fill(50, 100);
+      quad(
+        this.big_wall.coordinates.a.x,
+        this.big_wall.coordinates.a.y,
+        this.big_wall.coordinates.b.x,
+        this.big_wall.coordinates.b.y,
+        this.big_wall.coordinates.c.x,
+        this.big_wall.coordinates.c.y,
+        this.big_wall.coordinates.d.x,
+        this.big_wall.coordinates.d.y,
+      )
+      pop();
+    }
   }
 }

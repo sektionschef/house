@@ -65,6 +65,17 @@ using <https://sweetalert.js.org/>
 
 <https://editor.p5js.org/kriziafern/sketches/SkqpIVqgf>
 
+### old color palette
+
+```
+room_planning = new Room(300, 500, "Planning", "#fbc579", "#ffddb3");
+room_retro = new Room(700, 500, "Retro", "#ffdc8f", "#fcefc8");
+room_review = new Room(300, 700, "Review", "#8ac5d9", "#cde8f1");
+room_checkin = new Room(700, 700, "Checkin", "#8D88B3", "#ABA7C7");
+room_sales = new Room(1100, 700, "Sales", "#82B758", "#9DC67C");
+room_creative = new Room(1100, 200, "Creative", "#6e7f8f", "#8B98A5");
+```
+
 ## Licence
 
 - copyright illustrations interior: Vectorbox Studio <https://www.vecteezy.com/members/vectorbox_studio>

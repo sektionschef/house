@@ -63,13 +63,24 @@ function setup() {
 
   furnitures = [power_icon, feli]
 
-  room_planning = new Room(300, 500, "Planning", "#fbc579", "#ffddb3");
-  room_retro = new Room(700, 500, "Retro", "#ffdc8f", "#fcefc8");
-  room_review = new Room(300, 700, "Review", "#8ac5d9", "#cde8f1");
-  room_checkin = new Room(700, 700, "Checkin", "#8D88B3", "#ABA7C7");
-  room_sales = new Room(1100, 700, "Sales", "#82B758", "#9DC67C");
+  room_planning = new Room(300, 500, "Planning");
+  room_retro = new Room(700, 500, "Retro");
+  room_review = new Room(300, 700, "Review",);
+  room_checkin = new Room(700, 700, "Checkin",);
+  room_sales = new Room(1100, 700, "Sales",);
+  room_creative = new Room(1100, 200, "Creative",);
 
-  room_creative = new Room(1100, 200, "Creative", "#6e7f8f", "#8B98A5");
+  rooms = [
+    room_planning,
+    room_retro,
+    room_review,
+    room_checkin,
+    room_sales,
+    room_creative,
+  ]
+
+  // who is active
+  room_retro.active = true;
 }
 
 function draw() {
@@ -108,14 +119,9 @@ function draw() {
   ellipse(110,65,60,50);
   pop();
 
-  room_review.draw();
-  room_planning.draw();
-
-  room_checkin.draw();
-  room_retro.draw();
-  room_sales.draw();
-
-  room_creative.draw();
+  for (room of rooms) {
+    room.draw();
+  }
 
   // parallax middle line
   let parallax_middle = room_review.get_parallax_middle();
@@ -132,8 +138,6 @@ function draw() {
   living_room_basic.draw(300, 585);
 
   drawRoof();
-
-  room_retro.drawInactive();
 
   power_icon.draw(room_retro.get_parallax_middle().x, room_retro.get_parallax_middle().y - 10);
 
@@ -152,6 +156,11 @@ function draw() {
   drawDebugPos(room_creative.small_wall.coordinates.b.x, room_creative.small_wall.coordinates.b.y, "b");
   drawDebugPos(room_creative.small_wall.coordinates.c.x, room_creative.small_wall.coordinates.c.y, "c");
   drawDebugPos(room_creative.small_wall.coordinates.d.x, room_creative.small_wall.coordinates.d.y, "d");
+
+
+  for (room of rooms) {
+    room.drawState();
+  }
 
 
   for (furniture of furnitures) {
