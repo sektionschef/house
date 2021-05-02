@@ -5,6 +5,7 @@
 
 ## planned open house
 
+- image bei furniture classe als erstes element coords weg
 - licht im raum wenn aktiv
 - flying creative room
 - Räume stylen

@@ -1,13 +1,12 @@
 class Furniture {
-  constructor(x, y, image, target_link) {
+  constructor(x, y, image, label={}) {
     this.x = x;
     this.y = y;
     this.image = image;
-    this.target_link = target_link;
+    this.label = label;
 
     this.image.width_origin = this.image.width;
     this.image.height_origin = this.image.height;
-
   }
 
   draw(x, y) {
@@ -34,6 +33,12 @@ class Furniture {
 
   clicked() {
     if (this.if_hover) {
+        this.createModal()
+      }
+    }
+
+  createModal() {
+    if (this.label == "planning") {
       swal({
         title: "Plan für die Woche",
         text: "Geschmeidig bleiben!",
@@ -53,23 +58,202 @@ class Furniture {
         switch (value) {
 
           case "call":
-            window.open(this.target_link, "_blank");
-            break;
+          // window.open(this.target_link, "_blank");
+          break;
 
           case "whiteboard":
-            window.open("https://miro.com/app/board/o9J_lWUKbyE=/");
-            break;
+          window.open("https://miro.com/app/board/o9J_lWUKbyE=/");
+          break;
 
           case "tools":
-            // swal("Gotcha!", "Pikachu was caught!", "success");
-            window.open("https://www.orf.at")
-            break;
+          // swal("Gotcha!", "Pikachu was caught!", "success");
+          window.open("https://www.orf.at")
+          break;
 
           default:
-            // swal("Got away safely!");
+          // swal("Got away safely!");
+        }
+      })
+    } else if (this.label == "retro") {
+      swal({
+        title: "Zurückschauen",
+        text: "Gemeinsam besser werden",
+        // icon: "success",
+        buttons: {
+          enter: {
+            text: "Call",
+            value: "call",
+            closeModal: false,
+          },
+          whiteboard: true,
+          tools: true,
+          cancel: "Cancel",
+        },
+      })
+      .then((value) => {
+        switch (value) {
+
+          case "call":
+          // window.open(this.target_link, "_blank");
+          break;
+
+          case "whiteboard":
+          window.open("https://miro.com/app/board/o9J_lWUKbyE=/");
+          break;
+
+          case "tools":
+          // swal("Gotcha!", "Pikachu was caught!", "success");
+          window.open("https://www.orf.at")
+          break;
+
+          default:
+          // swal("Got away safely!");
         }
       });
-      // window.open(this.target_link)
+    } else if (this.label == "sales") {
+      swal({
+        title: "Money",
+        text: "verkaufen",
+        // icon: "success",
+        buttons: {
+          enter: {
+            text: "Call",
+            value: "call",
+            closeModal: false,
+          },
+          whiteboard: true,
+          tools: true,
+          cancel: "Cancel",
+        },
+      })
+      .then((value) => {
+        switch (value) {
+
+          case "call":
+          // window.open(this.target_link, "_blank");
+          break;
+
+          case "whiteboard":
+          window.open("https://miro.com/app/board/o9J_lWUKbyE=/");
+          break;
+
+          case "tools":
+          // swal("Gotcha!", "Pikachu was caught!", "success");
+          window.open("https://www.orf.at")
+          break;
+
+          default:
+          // swal("Got away safely!");
+        }
+      });
+    } else if (this.label == "creative") {
+      swal({
+        title: "Kreativ sein",
+        text: "alle ist erlaubt",
+        // icon: "success",
+        buttons: {
+          enter: {
+            text: "Call",
+            value: "call",
+            closeModal: false,
+          },
+          whiteboard: true,
+          tools: true,
+          cancel: "Cancel",
+        },
+      })
+      .then((value) => {
+        switch (value) {
+
+          case "call":
+          // window.open(this.target_link, "_blank");
+          break;
+
+          case "whiteboard":
+          window.open("https://miro.com/app/board/o9J_lWUKbyE=/");
+          break;
+
+          case "tools":
+          // swal("Gotcha!", "Pikachu was caught!", "success");
+          window.open("https://www.orf.at")
+          break;
+
+          default:
+          // swal("Got away safely!");
+        }
+      });
+    } else if (this.label == "review") {
+      swal({
+        title: "Präsentieren",
+        text: "was lernen wir",
+        // icon: "success",
+        buttons: {
+          enter: {
+            text: "Call",
+            value: "call",
+            closeModal: false,
+          },
+          whiteboard: true,
+          tools: true,
+          cancel: "Cancel",
+        },
+      })
+      .then((value) => {
+        switch (value) {
+
+          case "call":
+          // window.open(this.target_link, "_blank");
+          break;
+
+          case "whiteboard":
+          window.open("https://miro.com/app/board/o9J_lWUKbyE=/");
+          break;
+
+          case "tools":
+          // swal("Gotcha!", "Pikachu was caught!", "success");
+          window.open("https://www.orf.at")
+          break;
+
+          default:
+          // swal("Got away safely!");
+        }
+      });
+    } else if (this.label == "checkin") {
+      swal({
+        title: "Wer is dabei?",
+        text: "was geht",
+        // icon: "success",
+        buttons: {
+          enter: {
+            text: "Call",
+            value: "call",
+            closeModal: false,
+          },
+          whiteboard: true,
+          tools: true,
+          cancel: "Cancel",
+        },
+      })
+      .then((value) => {
+        switch (value) {
+
+          case "call":
+          // window.open(this.target_link, "_blank");
+          break;
+
+          case "whiteboard":
+          window.open("https://miro.com/app/board/o9J_lWUKbyE=/");
+          break;
+
+          case "tools":
+          // swal("Gotcha!", "Pikachu was caught!", "success");
+          window.open("https://www.orf.at")
+          break;
+
+          default:
+          // swal("Got away safely!");
+        }
+      });
     }
   }
 }

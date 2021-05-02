@@ -53,15 +53,31 @@ function setup() {
   resizeRelative(concessions_image, 12);
   resizeRelative(checkin_image, 4);
 
-  food_court = new Furniture(800, 600, food_court_image, "oida");
-  power_icon = new Furniture(600, 650, power_icon_image, "none");
-  living_room_basic = new Furniture(0, 0, living_room_basic_image, "nothing");
-  feli = new Furniture(0, 0, feli_image, "https://teams.microsoft.com/_#/conversations/19:1f3c38c5-449e-4242-a151-a893bcd0777a_6ff86881-25df-49da-a9a8-f06abd7d85bc@unq.gbl.spaces?ctx=chat");
-  fair = new Furniture( 0, 0, fair_image, "");
-  concessions = new Furniture( 0, 0, concessions_image, "");
-  checkin = new Furniture( 0, 0, checkin_image, "");
+  power_icon_retro = new Furniture(600, 650, power_icon_image, "retro");
+  power_icon_planning = new Furniture(600, 650, power_icon_image, "planning");
+  power_icon_sales = new Furniture(600, 650, power_icon_image, "sales");
+  power_icon_creative = new Furniture(600, 650, power_icon_image, "creative");
+  power_icon_review = new Furniture(600, 650, power_icon_image, "review");
+  power_icon_checkin = new Furniture(600, 650, power_icon_image, "checkin");
 
-  furnitures = [power_icon, feli]
+  food_court = new Furniture(800, 600, food_court_image);
+  living_room_basic = new Furniture(0, 0, living_room_basic_image);
+  feli = new Furniture(0, 0, feli_image);
+  fair = new Furniture( 0, 0, fair_image);
+  concessions = new Furniture( 0, 0, concessions_image);
+  checkin = new Furniture( 0, 0, checkin_image);
+
+  power_icons = new Array(
+    power_icon_retro,
+    power_icon_planning,
+    power_icon_sales,
+    power_icon_creative,
+    power_icon_review,
+    power_icon_checkin,
+  );
+
+  furnitures = new Array(feli);
+  furnitures = furnitures.concat(power_icons);
 
   room_planning = new Room(300, 500, "Planning");
   room_retro = new Room(700, 500, "Retro");
@@ -137,16 +153,22 @@ function draw() {
   // living room furniture
   living_room_basic.draw(300, 585);
 
-  drawRoof();
-
-  power_icon.draw(room_retro.get_parallax_middle().x, room_retro.get_parallax_middle().y - 10);
 
   fair.draw(room_creative.floor_middle.x, room_creative.floor_middle.y + 10);
   // feli.draw(1200, 280);
-
   concessions.draw(room_sales.floor_middle.x, room_sales.floor_middle.y + 10);
   checkin.draw(room_checkin.floor_middle.x, room_checkin.floor_middle.y + 15);
 
+
+  power_icon_retro.draw(room_retro.get_parallax_middle().x, room_retro.get_parallax_middle().y - 10);
+  power_icon_planning.draw(room_planning.get_parallax_middle().x, room_planning.get_parallax_middle().y - 10);
+  power_icon_checkin.draw(room_checkin.get_parallax_middle().x, room_checkin.get_parallax_middle().y - 10);
+  power_icon_sales.draw(room_sales.get_parallax_middle().x, room_sales.get_parallax_middle().y - 10);
+  power_icon_review.draw(room_review.get_parallax_middle().x, room_review.get_parallax_middle().y - 10);
+  power_icon_creative.draw(room_creative.get_parallax_middle().x, room_creative.get_parallax_middle().y - 10);
+
+  drawRoof();
+  
   drawDebugPos(room_creative.big_wall.coordinates.a.x, room_creative.big_wall.coordinates.a.y, "A");
   drawDebugPos(room_creative.big_wall.coordinates.b.x, room_creative.big_wall.coordinates.b.y, "B");
   drawDebugPos(room_creative.big_wall.coordinates.c.x, room_creative.big_wall.coordinates.c.y, "C");
@@ -174,7 +196,9 @@ function draw() {
 
 function mousePressed() {
   // soundtrack.play();
-  power_icon.clicked();
+  for (power_icon of power_icons) {
+    power_icon.clicked();
+  }
   feli.clicked();
 }
 
