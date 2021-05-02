@@ -3,24 +3,28 @@
 - was nehme ich mit ins Meeting. mindset, unterlagen
 - retro telefon - einfacher keine plattform wie zoom, teams, jitsi
 
+## questions
+
+mindsetter und ziele
+
 ## planned open house
 
-- flying creative room
-- dann nackate seite mit videos und tools
 - musik
 - amb CI - mit farbe raum
 - firlefanz - fence, tree, moving clouds,
-- style the modal - button color, und hintergrundfarbe siehe docs
 - logo am dach
 - Kreativtechniken
 
 ## done
 
+- flying creative room
 - Räume stylen
 - licht im raum wenn aktiv
 - popup mit mindsetter + ziele
 - dach mitbewegen
 - was ist klickbar? - Ein Icon
+- style the modal - button color, und hintergrundfarbe siehe
+- dann nackate seite mit videos und tools
 
 ## backlog
 

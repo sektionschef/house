@@ -38,8 +38,8 @@ class Furniture {
   createModal() {
     if (this.label == "planning") {
       swal({
-        title: "Plan für die Woche",
-        text: "Geschmeidig bleiben!",
+        title: "Fokus für die aktuelle Woche",
+        text: "Mal raus aus dem Alltag",
         // icon: "success",
         buttons: {
           enter: {
@@ -48,7 +48,6 @@ class Furniture {
             closeModal: false,
           },
           whiteboard: true,
-          tools: true,
           cancel: "Cancel",
         },
       })
@@ -56,16 +55,11 @@ class Furniture {
         switch (value) {
 
           case "call":
-          // window.open(this.target_link, "_blank");
+          window.open("https://www.orf.at")
           break;
 
           case "whiteboard":
           window.open("https://miro.com/app/board/o9J_lWUKbyE=/");
-          break;
-
-          case "tools":
-          // swal("Gotcha!", "Pikachu was caught!", "success");
-          window.open("https://www.orf.at")
           break;
 
           default:
@@ -74,8 +68,8 @@ class Furniture {
       })
     } else if (this.label == "retro") {
       swal({
-        title: "Zurückschauen",
-        text: "Gemeinsam besser werden",
+        title: "Learnings in der Zusammenarbeit",
+        text: "Die Perspektive anderer verstehen.",
         // icon: "success",
         buttons: {
           enter: {
@@ -84,7 +78,6 @@ class Furniture {
             closeModal: false,
           },
           whiteboard: true,
-          tools: true,
           cancel: "Cancel",
         },
       })
@@ -92,16 +85,11 @@ class Furniture {
         switch (value) {
 
           case "call":
-          // window.open(this.target_link, "_blank");
+          window.open("https://www.orf.at")
           break;
 
           case "whiteboard":
           window.open("https://miro.com/app/board/o9J_lWUKbyE=/");
-          break;
-
-          case "tools":
-          // swal("Gotcha!", "Pikachu was caught!", "success");
-          window.open("https://www.orf.at")
           break;
 
           default:
@@ -110,8 +98,8 @@ class Furniture {
       });
     } else if (this.label == "sales") {
       swal({
-        title: "Money",
-        text: "verkaufen",
+        title: "Status zu Sales Leads und Marketing Maßnahmen",
+        text: "Machen wir die richtigen Dinge?",
         // icon: "success",
         buttons: {
           enter: {
@@ -120,7 +108,6 @@ class Furniture {
             closeModal: false,
           },
           whiteboard: true,
-          tools: true,
           cancel: "Cancel",
         },
       })
@@ -128,16 +115,11 @@ class Furniture {
         switch (value) {
 
           case "call":
-          // window.open(this.target_link, "_blank");
+          window.open("https://www.orf.at")
           break;
 
           case "whiteboard":
           window.open("https://miro.com/app/board/o9J_lWUKbyE=/");
-          break;
-
-          case "tools":
-          // swal("Gotcha!", "Pikachu was caught!", "success");
-          window.open("https://www.orf.at")
           break;
 
           default:
@@ -146,8 +128,8 @@ class Furniture {
       });
     } else if (this.label == "creative") {
       swal({
-        title: "Kreativ sein",
-        text: "alle ist erlaubt",
+        title: "100 Ideen pro Minute",
+        text: "Alle ist erlaubt",
         // icon: "success",
         buttons: {
           enter: {
@@ -164,7 +146,7 @@ class Furniture {
         switch (value) {
 
           case "call":
-          // window.open(this.target_link, "_blank");
+          window.open("https://www.orf.at")
           break;
 
           case "whiteboard":
@@ -173,7 +155,7 @@ class Furniture {
 
           case "tools":
           // swal("Gotcha!", "Pikachu was caught!", "success");
-          window.open("https://www.orf.at")
+          window.open("naked_page.html")
           break;
 
           default:
@@ -182,8 +164,8 @@ class Furniture {
       });
     } else if (this.label == "review") {
       swal({
-        title: "Präsentieren",
-        text: "was lernen wir",
+        title: "Ergebnisse präsentieren und Learnings",
+        text: "Inwiefern kann mir das helfen",
         // icon: "success",
         buttons: {
           enter: {
@@ -192,7 +174,6 @@ class Furniture {
             closeModal: false,
           },
           whiteboard: true,
-          tools: true,
           cancel: "Cancel",
         },
       })
@@ -200,16 +181,11 @@ class Furniture {
         switch (value) {
 
           case "call":
-          // window.open(this.target_link, "_blank");
+          window.open("https://www.orf.at")
           break;
 
           case "whiteboard":
           window.open("https://miro.com/app/board/o9J_lWUKbyE=/");
-          break;
-
-          case "tools":
-          // swal("Gotcha!", "Pikachu was caught!", "success");
-          window.open("https://www.orf.at")
           break;
 
           default:
@@ -218,8 +194,8 @@ class Furniture {
       });
     } else if (this.label == "checkin") {
       swal({
-        title: "Wer is dabei?",
-        text: "was geht",
+        title: "Verbundenheit im Team",
+        text: "Wobei kann mir jemand helfen?",
         // icon: "success",
         buttons: {
           enter: {
@@ -228,7 +204,6 @@ class Furniture {
             closeModal: false,
           },
           whiteboard: true,
-          tools: true,
           cancel: "Cancel",
         },
       })
@@ -236,16 +211,11 @@ class Furniture {
         switch (value) {
 
           case "call":
-          // window.open(this.target_link, "_blank");
+          window.open("https://www.orf.at")
           break;
 
           case "whiteboard":
           window.open("https://miro.com/app/board/o9J_lWUKbyE=/");
-          break;
-
-          case "tools":
-          // swal("Gotcha!", "Pikachu was caught!", "success");
-          window.open("https://www.orf.at")
           break;
 
           default:
