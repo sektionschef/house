@@ -43,6 +43,8 @@ class Room {
       "c": {"x": this.small_wall.x + this.small_wall.width, "y": this.small_wall.y + this.small_wall.height},
       "d": {"x": this.small_wall.x, "y": this.small_wall.y + this.small_wall.height}
     }
+
+    this.get_floor_middle()
   }
 
   drawWall(wall_object) {
@@ -67,6 +69,13 @@ class Room {
 
     // console.log(mouseX);
     // console.log(this.parallax_x);
+  }
+
+  get_floor_middle() {
+    this.floor_middle = {
+      x: (this.small_wall.coordinates.c.x - this.small_wall.coordinates.d.x) /2 + this.small_wall.coordinates.d.x,
+      y: this.small_wall.coordinates.c.y,
+    }
   }
 
   get_parallax_middle() {

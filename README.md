@@ -76,3 +76,4 @@ using <https://sweetalert.js.org/>
   - blackboard [Web Vectors by Vecteezy](https://www.vecteezy.com/free-vector/web)
   - blackboard icon 2 [Lines Vectors by Vecteezy](https://www.vecteezy.com/free-vector/lines)
   - power button [Power Icon Vectors by Vecteezy](https://www.vecteezy.com/free-vector/power-icon)
+  - fair [Fair Vectors by Vecteezy](https://www.vecteezy.com/free-vector/fair)

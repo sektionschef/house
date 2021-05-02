@@ -9,9 +9,11 @@ let power_icon_image;
 let food_court_image;
 let living_room_basic_image;
 let feli_image;
+let fair_image;
 
 let brand_logo;
 let living_room;
+let fair;
 
 
 let furnitures;
@@ -28,6 +30,7 @@ function preload() {
   food_court_image = loadImage('images/food court 1.png');
   living_room_basic_image = loadImage('images/test.png');
   feli_image = loadImage('images/feli.png');
+  fair_image = loadImage('images/fair.svg');
 }
 
 function setup() {
@@ -35,20 +38,20 @@ function setup() {
 
   createCanvas(canvasWidth, canvasHeight);
 
-  //  resizing images
-  power_icon_image.resize(power_icon_image.width / 15, power_icon_image.height / 15);
-  food_court_image.resize(food_court_image.width / 11, food_court_image.height / 11);
-  living_room_basic_image.resize(living_room_basic_image.width / 3, living_room_basic_image.height / 3);
-  feli_image.resize(feli_image.width / 4, feli_image.height / 4);
-
   horizon_height = 750;
 
-  brand_logo.resize(brand_logo.width / 10, brand_logo.height / 10);
+  resizeRelative(power_icon_image, 15);
+  resizeRelative(food_court_image, 11);
+  resizeRelative(living_room_basic_image, 3);
+  resizeRelative(feli_image, 4);
+  resizeRelative(fair_image, 6);
+  resizeRelative(brand_logo, 10);
 
   food_court = new Furniture(800, 600, food_court_image, "oida");
   power_icon = new Furniture(600, 650, power_icon_image, "none");
   living_room_basic = new Furniture(0, 0, living_room_basic_image, "nothing");
   feli = new Furniture(0, 0, feli_image, "https://teams.microsoft.com/_#/conversations/19:1f3c38c5-449e-4242-a151-a893bcd0777a_6ff86881-25df-49da-a9a8-f06abd7d85bc@unq.gbl.spaces?ctx=chat");
+  fair = new Furniture( 0, 0, fair_image, "");
 
   furnitures = [power_icon, feli]
 
@@ -127,6 +130,19 @@ function draw() {
 
   power_icon.draw(room_retro.get_parallax_middle().x, room_retro.get_parallax_middle().y - 10);
 
+  fair.draw(room_creative.floor_middle.x, room_creative.floor_middle.y);
+
+  drawDebugPos(room_creative.big_wall.coordinates.a.x, room_creative.big_wall.coordinates.a.y, "A");
+  drawDebugPos(room_creative.big_wall.coordinates.b.x, room_creative.big_wall.coordinates.b.y, "B");
+  drawDebugPos(room_creative.big_wall.coordinates.c.x, room_creative.big_wall.coordinates.c.y, "C");
+  drawDebugPos(room_creative.big_wall.coordinates.d.x, room_creative.big_wall.coordinates.d.y, "D");
+
+  drawDebugPos(room_creative.small_wall.coordinates.a.x, room_creative.small_wall.coordinates.a.y, "a");
+  drawDebugPos(room_creative.small_wall.coordinates.b.x, room_creative.small_wall.coordinates.b.y, "b");
+  drawDebugPos(room_creative.small_wall.coordinates.c.x, room_creative.small_wall.coordinates.c.y, "c");
+  drawDebugPos(room_creative.small_wall.coordinates.d.x, room_creative.small_wall.coordinates.d.y, "d");
+
+
   for (furniture of furnitures) {
     // furniture.draw(400, 400);
     if (furniture.hover()) {
@@ -154,6 +170,10 @@ function drawDebugPos(x, y, label) {
     circle(x, y, 5);
     pop();
   }
+}
+
+function resizeRelative(image, factor) {
+  image.resize(image.width / factor, image.height / factor);
 }
 
 function drawRoof() {
