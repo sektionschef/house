@@ -7,6 +7,8 @@ class Room {
     this.color_walls = color_walls;
 
     this.wall_thickness = 15;
+    this.edge_color = color(245);
+    this.cut_wall = color(245);
 
     // add/subtract for parallax effect
     this.parallax_shift = 10;
@@ -95,9 +97,6 @@ class Room {
   draw() {
     this.update_parallax();
 
-    let edge_color = color(245);
-    let cut_wall = color(245);
-
     push();
     noStroke();
     fill(this.color_walls);
@@ -107,7 +106,7 @@ class Room {
     // lines between corners small and big wall
     push();
     strokeWeight(1);
-    stroke(edge_color);
+    stroke(this.edge_color);
     line(this.big_wall.coordinates.a.x, this.big_wall.coordinates.a.y, this.small_wall.coordinates.a.x, this.small_wall.coordinates.a.y);
     line(this.big_wall.coordinates.b.x, this.big_wall.coordinates.b.y, this.small_wall.coordinates.b.x, this.small_wall.coordinates.b.y);
     line(this.big_wall.coordinates.c.x, this.big_wall.coordinates.c.y, this.small_wall.coordinates.c.x, this.small_wall.coordinates.c.y);
@@ -117,14 +116,14 @@ class Room {
     push();
     fill(this.color_back);
     strokeWeight(1);
-    stroke(edge_color);
+    stroke(this.edge_color);
     this.drawWall(this.small_wall.coordinates);
     pop();
 
     // walls as frames to the big wall
     push();
     strokeWeight(this.wall_thickness);
-    stroke(cut_wall);
+    stroke(this.cut_wall);
     noFill();
     quad(
       this.big_wall.coordinates.a.x,
@@ -139,5 +138,24 @@ class Room {
     pop();
 
     this.create_room_label();
+  }
+
+  drawInactive() {
+    // inactive curtain
+    push();
+    strokeWeight(this.wall_thickness);
+    stroke(this.cut_wall);
+    fill(50, 150);
+    quad(
+      this.big_wall.coordinates.a.x,
+      this.big_wall.coordinates.a.y,
+      this.big_wall.coordinates.b.x,
+      this.big_wall.coordinates.b.y,
+      this.big_wall.coordinates.c.x,
+      this.big_wall.coordinates.c.y,
+      this.big_wall.coordinates.d.x,
+      this.big_wall.coordinates.d.y,
+    )
+    pop();
   }
 }

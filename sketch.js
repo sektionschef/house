@@ -116,13 +116,16 @@ function draw() {
 
   // retro
   food_court.draw(700, 590);
-  power_icon.draw(room_retro.get_parallax_middle().x, room_retro.get_parallax_middle().y);
 
   // living room furniture
   living_room_basic.draw(300, 585);
   feli.draw(1200, 280);
 
   drawRoof();
+
+  room_retro.drawInactive();
+
+  power_icon.draw(room_retro.get_parallax_middle().x, room_retro.get_parallax_middle().y - 10);
 
   for (furniture of furnitures) {
     // furniture.draw(400, 400);
