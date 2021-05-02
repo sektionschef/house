@@ -53,19 +53,19 @@ function setup() {
   resizeRelative(concessions_image, 12);
   resizeRelative(checkin_image, 4);
 
-  power_icon_retro = new Furniture(600, 650, power_icon_image, "retro");
-  power_icon_planning = new Furniture(600, 650, power_icon_image, "planning");
-  power_icon_sales = new Furniture(600, 650, power_icon_image, "sales");
-  power_icon_creative = new Furniture(600, 650, power_icon_image, "creative");
-  power_icon_review = new Furniture(600, 650, power_icon_image, "review");
-  power_icon_checkin = new Furniture(600, 650, power_icon_image, "checkin");
+  power_icon_retro = new Furniture(power_icon_image, "retro");
+  power_icon_planning = new Furniture(power_icon_image, "planning");
+  power_icon_sales = new Furniture(power_icon_image, "sales");
+  power_icon_creative = new Furniture(power_icon_image, "creative");
+  power_icon_review = new Furniture(power_icon_image, "review");
+  power_icon_checkin = new Furniture(power_icon_image, "checkin");
 
-  food_court = new Furniture(800, 600, food_court_image);
-  living_room_basic = new Furniture(0, 0, living_room_basic_image);
-  feli = new Furniture(0, 0, feli_image);
-  fair = new Furniture( 0, 0, fair_image);
-  concessions = new Furniture( 0, 0, concessions_image);
-  checkin = new Furniture( 0, 0, checkin_image);
+  food_court = new Furniture(food_court_image);
+  living_room_basic = new Furniture(living_room_basic_image);
+  feli = new Furniture(feli_image);
+  fair = new Furniture(fair_image);
+  concessions = new Furniture(concessions_image);
+  checkin = new Furniture(checkin_image);
 
   power_icons = new Array(
     power_icon_retro,
@@ -168,7 +168,7 @@ function draw() {
   power_icon_creative.draw(room_creative.get_parallax_middle().x, room_creative.get_parallax_middle().y - 10);
 
   drawRoof();
-  
+
   drawDebugPos(room_creative.big_wall.coordinates.a.x, room_creative.big_wall.coordinates.a.y, "A");
   drawDebugPos(room_creative.big_wall.coordinates.b.x, room_creative.big_wall.coordinates.b.y, "B");
   drawDebugPos(room_creative.big_wall.coordinates.c.x, room_creative.big_wall.coordinates.c.y, "C");

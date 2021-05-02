@@ -1,7 +1,5 @@
 class Furniture {
-  constructor(x, y, image, label={}) {
-    this.x = x;
-    this.y = y;
+  constructor(image, label={}) {
     this.image = image;
     this.label = label;
 
