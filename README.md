@@ -10,13 +10,14 @@ mindsetter und ziele
 ## planned open house
 
 - Kreativtechniken, amb design vorlagen
-- amb CI - mit farbe raum
 - musik
-- firlefanz - fence, tree, moving clouds,
-- logo am dach
 
 ## done
 
+- amb CI - mit farbe raum
+- turn on light
+- firlefanz - fence, tree, moving clouds,
+- logo am dach
 - flying creative room
 - Räume stylen
 - licht im raum wenn aktiv

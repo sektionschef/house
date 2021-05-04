@@ -189,7 +189,6 @@ function draw() {
   power_icon_creative.draw(room_creative.get_parallax_middle().x, room_creative.get_parallax_middle().y - 10);
 
   drawRoof();
-  vintage_sign.draw(200, 330);
 
 
   drawDebugPos(room_creative.big_wall.coordinates.a.x, room_creative.big_wall.coordinates.a.y, "A");
@@ -296,6 +295,9 @@ function drawRoof() {
   fill("#786364");
   rect(695, 250, 40, 10);
   pop();
+
+  // vintage_sign.draw(200, 330);
+  vintage_sign.draw(start_roof.x + 100, start_roof.y - 40);
 }
 
 function activateRoom() {
