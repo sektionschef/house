@@ -162,8 +162,10 @@ class Room {
 
   changeStateColor() {
     if (this.active) {
-      this.color_back = color('#ffdc8f');
-      this.color_walls = color('#fcefc8');
+      this.color_back = color('#ffeca0ff');
+      this.color_walls = color('#fff4c7ff');
+      // this.color_back = color('#ffdc8f'); "#ffe686ff"
+      // this.color_walls = color('#fcefc8'); "#ffeda6ff"
     } else {
       this.color_back = this.color_back_original;
       this.color_walls = this.color_walls_original;

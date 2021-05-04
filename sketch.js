@@ -12,6 +12,7 @@ let feli_image;
 let fair_image;
 let concessions_image;
 let checkin_image
+let vintage_sign_image;
 
 let brand_logo;
 let living_room;
@@ -21,6 +22,8 @@ let furnitures;
 let room;
 
 let horizon_height;
+let button;
+let button_state;
 
 function preload() {
   // soundtrack = loadSound('Sunny Day-SoundBible.com-2064222612.mp3');
@@ -34,6 +37,9 @@ function preload() {
   fair_image = loadImage('images/fair.svg');
   concessions_image = loadImage('images/concessions.svg');
   checkin_image = loadImage('images/checkin.svg');
+  tree_image = loadImage('images/tree.svg');
+  fence_image = loadImage('images/fence.svg');
+  vintage_sign_image = loadImage('images/vintage_sign.svg');
 }
 
 function setup() {
@@ -51,6 +57,9 @@ function setup() {
   resizeRelative(brand_logo, 8);
   resizeRelative(concessions_image, 12);
   resizeRelative(checkin_image, 4);
+  resizeRelative(tree_image, 1);
+  resizeRelative(fence_image, 3);
+  resizeRelative(vintage_sign_image, 2);
 
   power_icon_retro = new Furniture(power_icon_image, "retro");
   power_icon_planning = new Furniture(power_icon_image, "planning");
@@ -65,6 +74,9 @@ function setup() {
   fair = new Furniture(fair_image);
   concessions = new Furniture(concessions_image);
   checkin = new Furniture(checkin_image);
+  tree = new Furniture(tree_image);
+  fence = new Furniture(fence_image);
+  vintage_sign = new Furniture(vintage_sign_image);
 
   power_icons = new Array(
     power_icon_retro,
@@ -101,6 +113,10 @@ function setup() {
 
   steams = new Steams();
   clouds = new Clouds();
+
+  button = createButton('turn on light');
+  button.position(0, 0);
+  button_state = false;
 }
 
 function draw() {
@@ -109,23 +125,30 @@ function draw() {
 
   cursor(ARROW);
 
-  push();
+  tree.draw(1300, 820);
+
+  // ground
   noStroke();
-  fill("#9dc378")
+  fill("#9dc378");
   rect(0, horizon_height, width, horizon_height);
-  pop();
+  fill("#7c5f5c");
+  rect(0, horizon_height + 80, width, horizon_height + 80);
+
+  fence.draw(0 + (fence_image.width/2), horizon_height);
+  fence.draw(width - (fence_image.width/2), horizon_height);
 
   // sky
   push();
   // sun
   noStroke();
-  fill("#fed789");
-  // fill("#ffd223");  // amb yellow
-  circle(300, 100, 80);
+  // fill("#fed789");
+  fill("#ffd223");  // amb yellow
+  circle(500, 100, 80);
   pop();
 
+
   clouds.display();
-  image(brand_logo, (width/2 - brand_logo.width/2), 50);
+  // image(brand_logo, (width/2 - brand_logo.width/2), 50);
 
   steams.heat(room_creative.get_parallax_middle().x - 180, room_creative.get_parallax_middle().y);
   steams.heat(room_creative.get_parallax_middle().x + 180, room_creative.get_parallax_middle().y);
@@ -166,6 +189,7 @@ function draw() {
   power_icon_creative.draw(room_creative.get_parallax_middle().x, room_creative.get_parallax_middle().y - 10);
 
   drawRoof();
+  vintage_sign.draw(200, 330);
 
 
   drawDebugPos(room_creative.big_wall.coordinates.a.x, room_creative.big_wall.coordinates.a.y, "A");
@@ -190,6 +214,8 @@ function draw() {
       cursor(HAND);
     }
   }
+
+  button.mousePressed(activateRoom);
 
 }
 
@@ -270,4 +296,9 @@ function drawRoof() {
   fill("#786364");
   rect(695, 250, 40, 10);
   pop();
+}
+
+function activateRoom() {
+  button_state = !button_state;
+  room_sales.active = button_state;
 }

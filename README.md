@@ -9,11 +9,11 @@ mindsetter und ziele
 
 ## planned open house
 
-- musik
+- Kreativtechniken, amb design vorlagen
 - amb CI - mit farbe raum
+- musik
 - firlefanz - fence, tree, moving clouds,
 - logo am dach
-- Kreativtechniken
 
 ## done
 
@@ -105,3 +105,8 @@ room_creative = new Room(1100, 200, "Creative", "#6e7f8f", "#8B98A5");
   - concessions - [Museum Vectors by Vecteezy](https://www.vecteezy.com/free-vector/museum)
   - bathroom - [Glass Vectors by Vecteezy](https://www.vecteezy.com/free-vector/glass)
   - alterantive for checkin -> <https://www.vecteezy.com/vector-art/229812-vector-interior-furniture-design-illustration>
+  - trees [Vectors by Vecteezy](https://www.vecteezy.com/free-vector/)
+  - fence [Fence Vectors by Vecteezy](https://www.vecteezy.com/free-vector/fence)
+  - vintage signs [Vector Vectors by Vecteezy](https://www.vecteezy.com/free-vector/vector)
+
+create text: <https://maketext.io/>
