@@ -38,8 +38,8 @@ class Furniture {
   createModal() {
     if (this.label == "planning") {
       swal({
-        title: "Fokus für die aktuelle Woche",
-        text: "Mal raus aus dem Alltag",
+        title: "Planning",
+        text: "Worauf richtest du deinen Fokus in der aktuellen Woche?",
         // icon: "success",
         buttons: {
           enter: {
@@ -68,8 +68,8 @@ class Furniture {
       })
     } else if (this.label == "retro") {
       swal({
-        title: "Learnings in der Zusammenarbeit",
-        text: "Die Perspektive anderer verstehen.",
+        title: "Retro",
+        text: "Was können wir tun, um die Zusammenarbeit leichter zu gestalten?",
         // icon: "success",
         buttons: {
           enter: {
@@ -98,8 +98,8 @@ class Furniture {
       });
     } else if (this.label == "sales") {
       swal({
-        title: "Status zu Sales Leads und Marketing Maßnahmen",
-        text: "Machen wir die richtigen Dinge?",
+        title: "Sales",
+        text: "Wer will noch mal? Wer hat noch nicht?",
         // icon: "success",
         buttons: {
           enter: {
@@ -128,8 +128,8 @@ class Furniture {
       });
     } else if (this.label == "creative") {
       swal({
-        title: "100 Ideen pro Minute",
-        text: "Alle ist erlaubt",
+        title: "Creative",
+        text: "100 Ideen pro Minute.",
         // icon: "success",
         buttons: {
           enter: {
@@ -164,8 +164,8 @@ class Furniture {
       });
     } else if (this.label == "review") {
       swal({
-        title: "Ergebnisse präsentieren und Learnings",
-        text: "Inwiefern kann mir das helfen",
+        title: "Review",
+        text: "Ergebnisse präsentieren und Learnings ziehen.",
         // icon: "success",
         buttons: {
           enter: {
@@ -194,8 +194,8 @@ class Furniture {
       });
     } else if (this.label == "checkin") {
       swal({
-        title: "Verbundenheit im Team",
-        text: "Wobei kann mir jemand helfen?",
+        title: "Checkin",
+        text: "Seid ihr alle da?",
         // icon: "success",
         buttons: {
           enter: {
