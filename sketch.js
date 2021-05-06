@@ -107,9 +107,10 @@ function setup() {
   ]
 
   // who is active
-  room_retro.active = true;
-  room_creative.active = true;
-  room_checkin.active = true;
+  // room_retro.active = true;
+  // room_creative.active = true;
+  // room_checkin.active = true;
+  room_planning.active = true;
 
   steams = new Steams();
   clouds = new Clouds();
@@ -302,5 +303,8 @@ function drawRoof() {
 
 function activateRoom() {
   button_state = !button_state;
-  room_sales.active = button_state;
+  // room_sales.active = button_state;
+  room_retro.active = button_state;
+  room_creative.active = button_state;
+  room_checkin.active = button_state;
 }

@@ -47,7 +47,12 @@ class Furniture {
             value: "call",
             closeModal: false,
           },
-          whiteboard: true,
+          // whiteboard: true,
+          whiteboard: {
+            text: "🖌️ Whiteboard",
+            value: "whiteboard",
+            closeModal: false,
+          },
           cancel: "Cancel",
         },
       })
@@ -77,7 +82,11 @@ class Furniture {
             value: "call",
             closeModal: false,
           },
-          whiteboard: true,
+          whiteboard: {
+            text: "🖌️ Whiteboard",
+            value: "whiteboard",
+            closeModal: false,
+          },
           cancel: "Cancel",
         },
       })
@@ -107,7 +116,11 @@ class Furniture {
             value: "call",
             closeModal: false,
           },
-          whiteboard: true,
+          whiteboard: {
+            text: "🖌️ Whiteboard",
+            value: "whiteboard",
+            closeModal: false,
+          },
           cancel: "Cancel",
         },
       })
@@ -137,7 +150,11 @@ class Furniture {
             value: "call",
             closeModal: false,
           },
-          whiteboard: true,
+          whiteboard: {
+            text: "🖌️ Whiteboard",
+            value: "whiteboard",
+            closeModal: false,
+          },
           tools: true,
           cancel: "Cancel",
         },
@@ -173,7 +190,11 @@ class Furniture {
             value: "call",
             closeModal: false,
           },
-          whiteboard: true,
+          whiteboard: {
+            text: "🖌️ Whiteboard",
+            value: "whiteboard",
+            closeModal: false,
+          },
           cancel: "Cancel",
         },
       })
@@ -203,7 +224,11 @@ class Furniture {
             value: "call",
             closeModal: false,
           },
-          whiteboard: true,
+          whiteboard: {
+            text: "🖌️ Whiteboard",
+            value: "whiteboard",
+            closeModal: false,
+          },
           cancel: "Cancel",
         },
       })
