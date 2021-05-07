@@ -60,7 +60,7 @@ class Furniture {
         switch (value) {
 
           case "call":
-          window.open("https://www.orf.at")
+          window.open("https://zoom.us/j/97483216005")
           break;
 
           case "whiteboard":
@@ -94,7 +94,7 @@ class Furniture {
         switch (value) {
 
           case "call":
-          window.open("https://www.orf.at")
+          window.open("https://zoom.us/j/97483216005")
           break;
 
           case "whiteboard":
@@ -128,7 +128,7 @@ class Furniture {
         switch (value) {
 
           case "call":
-          window.open("https://www.orf.at")
+          window.open("https://zoom.us/j/97483216005")
           break;
 
           case "whiteboard":
@@ -163,7 +163,7 @@ class Furniture {
         switch (value) {
 
           case "call":
-          window.open("https://www.orf.at")
+          window.open("https://zoom.us/j/97483216005")
           break;
 
           case "whiteboard":
@@ -202,7 +202,7 @@ class Furniture {
         switch (value) {
 
           case "call":
-          window.open("https://www.orf.at")
+          window.open("https://zoom.us/j/97483216005")
           break;
 
           case "whiteboard":
@@ -236,7 +236,7 @@ class Furniture {
         switch (value) {
 
           case "call":
-          window.open("https://www.orf.at")
+          window.open("https://zoom.us/j/97483216005")
           break;
 
           case "whiteboard":
