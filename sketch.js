@@ -32,7 +32,7 @@ function preload() {
   // furnitures
   power_icon_image = loadImage('images/power_icon.svg');
   food_court_image = loadImage('images/food court 1.png');
-  living_room_basic_image = loadImage('images/test.png');
+  living_room_basic_image = loadImage('images/living_room.svg');
   feli_image = loadImage('images/feli.png');
   fair_image = loadImage('images/fair.svg');
   concessions_image = loadImage('images/concessions.svg');
@@ -51,7 +51,7 @@ function setup() {
 
   resizeRelative(power_icon_image, 15);
   resizeRelative(food_court_image, 11);
-  resizeRelative(living_room_basic_image, 3);
+  resizeRelative(living_room_basic_image, 4);
   resizeRelative(feli_image, 4);
   resizeRelative(fair_image, 6);
   resizeRelative(brand_logo, 8);
@@ -173,7 +173,7 @@ function draw() {
   food_court.draw(700, 590);
 
   // living room furniture
-  living_room_basic.draw(300, 585);
+  living_room_basic.draw(300, 600);
 
 
   fair.draw(room_creative.get_parallax_middle().x, room_creative.get_parallax_middle().y - 10);
