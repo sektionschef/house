@@ -1,12 +1,5 @@
 # Digitale Räume
 
-- was nehme ich mit ins Meeting. mindset, unterlagen
-- retro telefon - einfacher keine plattform wie zoom, teams, jitsi
-
-## questions
-
-mindsetter und ziele
-
 ## planned open house
 
 - Kreativtechniken, amb design vorlagen
