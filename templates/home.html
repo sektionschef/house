@@ -9,13 +9,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/addons/p5.sound.min.js" integrity="sha512-wM+t5MzLiNHl2fwT5rWSXr2JMeymTtixiw2lWyVk1JK/jDM4RBSFoH4J8LjucwlDdY6Mu84Kj0gPXp7rLGaDyA==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/loglevel/1.7.1/loglevel.min.js"></script>
 
-    <!-- <script src={{ url_for('send_static', path='decomp.min.js') }}></script> -->
-    <link rel="stylesheet" type="text/css" href="static/style.css">
-    <script src="static/objects/cloud.js"></script>
-    <script src="static/objects/steam.js"></script>
-    <script src="static/objects/furniture.js"></script>
-    <script src="static/objects/room.js"></script>
-    <script src="static/sketch.js"></script>
+    <script src={{ url_for('send_static', path='objects/cloud.js') }}></script>
+    <script src={{ url_for('send_static', path='objects/steam.js') }}></script>
+    <script src={{ url_for('send_static', path='objects/furniture.js') }}></script>
+    <script src={{ url_for('send_static', path='objects/room.js') }}></script>
+    <script src={{ url_for('send_static', path='objects/sketch.js') }}></script>
+
+    <link rel="stylesheet" type="text/css" href={{ url_for('send_static', path='css/style.css') }}>
     <script>
       var logging = log.noConflict();
     </script>
