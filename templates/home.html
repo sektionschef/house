@@ -1,26 +1,35 @@
-<!DOCTYPE html>
-<html lang="en"><head>
+{% extends "bootstrap/base.html" %}
+{% block title %} Homebase {% endblock title %}
+
+{% block head %}
+{{ super() }}
+    <meta charset="utf-8">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js" integrity="sha512-b/htz6gIyFi3dwSoZ0Uv3cuv3Ony7EeKkacgrcVg8CMzu90n777qveu0PBcbZUA7TzyENGtU+qZRuFAkfqgyoQ==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/addons/p5.sound.min.js" integrity="sha512-wM+t5MzLiNHl2fwT5rWSXr2JMeymTtixiw2lWyVk1JK/jDM4RBSFoH4J8LjucwlDdY6Mu84Kj0gPXp7rLGaDyA==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/loglevel/1.7.1/loglevel.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <meta charset="utf-8">
-    <script src="objects/cloud.js"></script>
-    <script src="objects/steam.js"></script>
-    <script src="objects/furniture.js"></script>
-    <script src="objects/room.js"></script>
-    <script src="sketch.js"></script>
+
+    <!-- <script src={{ url_for('send_static', path='decomp.min.js') }}></script> -->
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+    <script src="static/objects/cloud.js"></script>
+    <script src="static/objects/steam.js"></script>
+    <script src="static/objects/furniture.js"></script>
+    <script src="static/objects/room.js"></script>
+    <script src="static/sketch.js"></script>
     <script>
       var logging = log.noConflict();
     </script>
-  </head>
-  <body>
+{% endblock head %}
 
+
+{% block content %}
 <h1>Das digitale Musterhaus (Alpha Version)</h1>
 
 <p>Ein neues Zuhause für Ihre Teams. Jetzt mieten statt suchen und <a href="https://www.ambuzzador.com/digitale-erlebnisraume/">hier mehr erfahren</a>.</p>
 
-
-
-</body></html>
+<div class="container">
+  <!-- div element that will hold the canvas -->
+  <div id="canvasHolder" align="center">
+  </div>
+</div>
+{% endblock content %}

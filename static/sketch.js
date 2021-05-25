@@ -27,25 +27,26 @@ let button_state;
 
 function preload() {
   // soundtrack = loadSound('Sunny Day-SoundBible.com-2064222612.mp3');
-  brand_logo = loadImage('images/ambuzzador_logo.png')
+  brand_logo = loadImage('static/ambuzzador_logo.png')
 
   // furnitures
-  power_icon_image = loadImage('images/power_icon.svg');
-  food_court_image = loadImage('images/food court 1.png');
-  living_room_basic_image = loadImage('images/living_room.svg');
-  feli_image = loadImage('images/feli.png');
-  fair_image = loadImage('images/fair.svg');
-  concessions_image = loadImage('images/concessions.svg');
-  checkin_image = loadImage('images/checkin.svg');
-  tree_image = loadImage('images/tree.svg');
-  fence_image = loadImage('images/fence.svg');
-  vintage_sign_image = loadImage('images/vintage_sign.svg');
+  power_icon_image = loadImage('static/power_icon.svg');
+  food_court_image = loadImage('static/food court 1.png');
+  living_room_basic_image = loadImage('static/living_room.svg');
+  feli_image = loadImage('static/feli.png');
+  fair_image = loadImage('static/fair.svg');
+  concessions_image = loadImage('static/concessions.svg');
+  checkin_image = loadImage('static/checkin.svg');
+  tree_image = loadImage('static/tree.svg');
+  fence_image = loadImage('static/fence.svg');
+  vintage_sign_image = loadImage('static/vintage_sign.svg');
 }
 
 function setup() {
   logging.setLevel(SWITCH_LOGGING_LEVEL);
 
-  createCanvas(canvasWidth, canvasHeight);
+  // createCanvas(canvasWidth, canvasHeight);
+  let canvas = createCanvas(canvasWidth, canvasHeight).parent('canvasHolder');
 
   horizon_height = 750;
 
